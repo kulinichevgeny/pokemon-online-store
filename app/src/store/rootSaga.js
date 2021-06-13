@@ -1,10 +1,10 @@
-import 'regenerator-runtime/runtime'
-import { all } from 'redux-saga/effects'
+import 'regenerator-runtime/runtime';
+import { all } from 'redux-saga/effects';
 
-import getPokemonsWatcher from "../pages/Home/sagas";
+import apiCallsSaga from '../helpers/requests/watchRequest';
 
 function* rootSaga() {
-  yield all([getPokemonsWatcher()])
+  yield all([apiCallsSaga()]);
 }
 
 export default rootSaga;
