@@ -7,6 +7,7 @@ import { PersistGate } from 'redux-persist/integration/react';
 
 import Routes from './routes/Routes';
 import { configureStore } from './store/configureStore';
+import MainLayout from './commonComponents/Layouts/MainLayout';
 
 import './styles/index.scss';
 
@@ -18,7 +19,9 @@ ReactDOM.render(
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
           <BrowserRouter>
-            <Routes/>
+            <MainLayout>
+              <Routes/>
+            </MainLayout>
           </BrowserRouter>
         </PersistGate>
       </Provider>

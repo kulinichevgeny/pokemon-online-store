@@ -3,21 +3,26 @@ import { persistReducer } from 'redux-persist';
 import { createBlacklistFilter } from 'redux-persist-transform-filter';
 import storage from 'redux-persist/lib/storage';
 
+import authorization from '../modules/Login/reducers'
 import pokemonsManager from '../pages/PokemonStore/reducers';
 import pokemonDetails from '../pages/PokemonDetails/reducers';
 
-const pokemonsManagerBlackListedFields = createBlacklistFilter('pokemonsManager', [
-  'errors',
+const authorizationBlackListedFields = createBlacklistFilter('authorization', [
   'isLoading',
+  'errors',
 ]);
 
-const rootReducer = combineReducers({pokemonsManager, pokemonDetails});
+const rootReducer = combineReducers({
+  authorization,
+  pokemonsManager,
+  pokemonDetails,
+});
 
 const persistConfig = {
   key: 'root',
   storage,
-  whitelist: ['pokemonsManager'],
-  transforms: [pokemonsManagerBlackListedFields],
+  whitelist: ['authorization'],
+  transforms: [authorizationBlackListedFields],
 };
 
 export default persistReducer(persistConfig, rootReducer);

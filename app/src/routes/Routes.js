@@ -1,9 +1,11 @@
 import { Switch, Route } from 'react-router-dom';
 
+import PrivateRoute from './PrivateRoute';
 import { ROUTES } from './routeNames';
 import HomePageContainer from '../pages/Home/containers/HomePageContainer';
 import PokemonDetailsPageContainer from '../pages/PokemonDetails/containers/PokemonDetailsPageContainer';
 import PokemonStorePageContainer from '../pages/PokemonStore/containers/PokemonStorePageContainer';
+import LoginPageContainer from '../pages/Login/containers/LoginPageContainer';
 
 const Routes = () => {
   return (
@@ -13,17 +15,14 @@ const Routes = () => {
                component={HomePageContainer}
         />
         <Route exact
-               path={ROUTES.AUTH_PAGE}
+               path={ROUTES.LOGIN_PAGE}
+               component={LoginPageContainer}
         />
-        <Route exact
+        <PrivateRoute exact
                path={ROUTES.POKEMON_STORE}
                component={PokemonStorePageContainer}
         />
-        {/*<Route exact*/}
-        {/*       path={ROUTES.POKEMON_DETAILS_PAGE}*/}
-        {/*       component={PokemonDetailsPageContainer}*/}
-        {/*/>*/}
-        <Route exact
+        <PrivateRoute exact
                path={ROUTES.POKEMON_DETAILS}
                component={PokemonDetailsPageContainer}
         />

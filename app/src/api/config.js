@@ -9,8 +9,6 @@ const config = {
     Accept: 'application/json',
     'Content-type': 'application/json',
     Pragma: 'no-cache',
-    Authorization:
-    'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGMzNTcwZjhjZDMyZDAwMTE5OGJmZjIiLCJyb2xlcyI6WyJjdXN0b21lciJdLCJpYXQiOjE2MjM1NzA5NTgsImV4cCI6MTYyMzY1NzM1OH0.fD7KPefRLILXhA-ZtxIyKEdjhmctXJkMbst98_Yny_Y'
   },
 };
 
