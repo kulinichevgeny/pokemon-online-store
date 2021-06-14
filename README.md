@@ -13,9 +13,9 @@
         <img src="https://badge.fury.io/js/npm.svg" /></a>
 </p>
 
-<a href="#">
-    <img alt="GIF" src="public/preview.gif" width="710px" />
-</a>
+<p align=center>
+    <img alt="GIF" src="public/preview.gif" width="600px" />
+</p>
 
 ## About
 This is my IT SHATLE React module graduation work. Made with HTML, Sass(SCSS), JavaScript, React, Redux and Material-UI. You are welcome!
