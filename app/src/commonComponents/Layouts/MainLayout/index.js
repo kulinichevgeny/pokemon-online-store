@@ -1,8 +1,8 @@
-import { Link } from 'react-router-dom';
-import * as _ from 'lodash';
+import { Link } from "react-router-dom";
+import * as _ from "lodash";
 
-import { ROUTES } from '../../../routes/routeNames';
-import styles from './style.module.scss';
+import { ROUTES } from "../../../routes/routeNames";
+import styles from "./style.module.scss";
 
 const MainLayout = ({ children }) => {
   return (

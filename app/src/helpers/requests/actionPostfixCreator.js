@@ -1,4 +1,4 @@
-import { POSTFIXES } from '../../constants/actionPostfixes';
+import { POSTFIXES } from "../../constants/actionPostfixes";
 
 const { REQUEST_POSTFIX } = POSTFIXES;
 

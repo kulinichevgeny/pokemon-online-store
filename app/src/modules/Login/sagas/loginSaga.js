@@ -1,8 +1,8 @@
-import { takeEvery, take, select } from 'redux-saga/effects';
-import { REHYDRATE } from 'redux-persist/es/constants';
+import { takeEvery, take, select } from "redux-saga/effects";
+import { REHYDRATE } from "redux-persist/es/constants";
 
-import { SIGN_IN_SUCCESS } from '../actions';
-import api from '../../../api/config';
+import { SIGN_IN_SUCCESS } from "../actions";
+import api from "../../../api/config";
 
 const authSelector = (state) => state.authorization;
 

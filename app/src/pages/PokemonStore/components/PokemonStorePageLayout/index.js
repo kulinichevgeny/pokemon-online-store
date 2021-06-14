@@ -1,7 +1,7 @@
-import React from 'react';
-import { CircularProgress } from '@material-ui/core';
+import React from "react";
+import { CircularProgress } from "@material-ui/core";
 
-import styles from './style.module.scss';
+import styles from "./style.module.scss";
 
 const PokemonStorePageLayout = ({ pokemonsList, isLoading, handleGoToDetails }) => {
   return (
@@ -13,7 +13,7 @@ const PokemonStorePageLayout = ({ pokemonsList, isLoading, handleGoToDetails }) 
         ) : (
             pokemonsList.map((pokemon) => (
                 <div key={pokemon.id}>
-                  <img className={styles.pokemonPhoto} src={pokemon.image} alt="Pokemon" />
+                  <img className={styles.pokemonPhoto} src={pokemon.image} alt='Pokemon' />
                   <p>{pokemon.id}. {pokemon.name}</p>
                   <p>Price: {pokemon.price} coins</p>
                   <button onClick={() => handleGoToDetails(pokemon.id)}>See more</button>
