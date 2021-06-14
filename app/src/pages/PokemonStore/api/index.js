@@ -1,3 +1,3 @@
-import api from '../../../api/config'
+import api from "../../../api/config";
 
-export const getPokemons = () => api.get('/products')
+export const getPokemons = () => api.get('/products');

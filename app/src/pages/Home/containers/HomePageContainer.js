@@ -1,4 +1,4 @@
-import HomePageLayout from '../components/HomePageLayout';
+import HomePageLayout from "../components/HomePageLayout";
 
 const HomePageContainer = () => {
   return <HomePageLayout />;

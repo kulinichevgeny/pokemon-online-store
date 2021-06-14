@@ -1,7 +1,7 @@
-import React from 'react';
-import { Box, Button, TextField } from '@material-ui/core';
+import React from "react";
+import { Box, Button, TextField } from "@material-ui/core";
 
-const LoginPageLayout = ({ loginValues, setLoginValues, handleSubmit }) => {
+const LoginPageLayout = ({ setLoginValues, handleSubmit }) => {
   return (
       <Box>
         <form onSubmit={handleSubmit}>

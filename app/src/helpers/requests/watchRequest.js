@@ -1,10 +1,10 @@
-import { call, put, takeEvery, delay } from 'redux-saga/effects';
-import { isEmpty } from 'lodash';
+import { call, put, takeEvery, delay } from "redux-saga/effects";
+import { isEmpty } from "lodash";
 
-import apiCallsMapping from '../../api/apiCallsMapping';
-import createActionWithPostfix from './actionPostfixCreator';
+import apiCallsMapping from "../../api/apiCallsMapping";
+import createActionWithPostfix from "./actionPostfixCreator";
 
-import { POSTFIXES, REQUEST_PENDING_DELAY } from '../../constants/actionPostfixes';
+import { POSTFIXES, REQUEST_PENDING_DELAY } from "../../constants/actionPostfixes";
 
 const { REQUEST_POSTFIX, SUCCESS_POSTFIX, FAIL_POSTFIX } = POSTFIXES;
 
@@ -24,7 +24,7 @@ function* sendRequest(action) {
     yield put(
         createActionWithPostfix(
             action,
-            { response: !isEmpty(error.response) ? error.response.data.message : '' },
+            { response: !isEmpty(error.response) ? error.response.data.message : "" },
             FAIL_POSTFIX
         )
     );
