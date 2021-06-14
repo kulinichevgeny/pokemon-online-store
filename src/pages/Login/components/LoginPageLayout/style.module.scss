@@ -1,0 +1,44 @@
+@import '../../../../styles/vars';
+
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 16rem;
+}
+
+.loginInput {
+  font-family: inherit !important;
+  border: 2px solid $white !important;
+  border-right-color: $border-color !important;
+  border-bottom-color: $border-color !important;
+  background-color: $silver !important;
+
+  margin: 1rem !important;
+}
+
+.loginButton {
+  width: 6rem !important;
+  border-width: 2px !important;
+  border-style: outset !important;
+  border-color: buttonface !important;
+  border-right-color: $border-color !important;
+  border-bottom-color: $border-color !important;
+  border-radius: 1px !important;
+  background: $silver !important;
+
+  transition: 0.1s ease !important;
+
+  padding: 0.3rem 0 0.2rem !important;
+  margin-top: 1rem !important;
+
+  &:hover {
+    border: 2px inset $white !important;
+    background: $silver !important;
+    color: $black !important;
+    box-shadow: -1px -1px $black !important;
+  }
+  &:active {
+    background: url("../../../../assets/img/background.bmp") !important;
+  }
+}
