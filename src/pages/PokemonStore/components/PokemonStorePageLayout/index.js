@@ -8,17 +8,25 @@ const PokemonStorePageLayout = ({ pokemonsList, isLoading, handleGoToDetails }) 
       <div>
         <h1>Pokemon Store Page</h1>
 
-        {isLoading ? (
-            <CircularProgress/>
-        ) : (
-            pokemonsList.map((pokemon) => (
-                <div key={pokemon.id}>
-                  <img className={styles.pokemonPhoto} src={pokemon.image} alt='Pokemon' />
-                  <p>{pokemon.id}. {pokemon.name}</p>
-                  <p>Price: {pokemon.price} coins</p>
-                  <button onClick={() => handleGoToDetails(pokemon.id)}>See more</button>
-                </div>
-            )))}
+        <div className={styles.pokemonList}>
+          { isLoading ? (
+              <CircularProgress/>
+          ) : (
+              pokemonsList.map((pokemon) => (
+                  <div key={pokemon.id}>
+                    <div className={styles.pokemonCard}>
+                      <h3 className={styles.pokemonCardTitle}>{pokemon.id}. {pokemon.name}</h3>
+                      <div  className={styles.pokemonCardContent}>
+                        <div className={styles.pokemonCardPhoto}>
+                          <img src={pokemon.image} alt='Pokemon'/>
+                        </div>
+                        <p>Price: {pokemon.price} coins</p>
+                        <button className={styles.pokemonCardButton} onClick={() => handleGoToDetails(pokemon.id)}>See more</button>
+                      </div>
+                    </div>
+                  </div>
+              )))}
+        </div>
       </div>
   )
 };

@@ -1,29 +1,34 @@
 import React from "react";
 import { Box, Button, TextField } from "@material-ui/core";
 
+import styles from "./style.module.scss";
+
 const LoginPageLayout = ({ setLoginValues, handleSubmit }) => {
   return (
       <Box>
-        <form onSubmit={handleSubmit}>
+        <h1>Sign In</h1>
+        <form className={styles.loginForm} onSubmit={handleSubmit}>
           <Box>
             <TextField
+                className={styles.loginInput}
                 name='email'
                 onChange={setLoginValues}
                 label="Email"
                 type="email"
-                variant="outlined"
+                variant="filled"
             />
           </Box>
           <Box>
             <TextField
+                className={styles.loginInput}
                 name='password'
                 onChange={setLoginValues}
                 label="Password"
                 type="password"
-                variant="outlined"
+                variant="filled"
             />
           </Box>
-          <Button type='submit'>Login</Button>
+          <Button className={styles.loginButton} type='submit'>Login</Button>
         </form>
       </Box>
   );
