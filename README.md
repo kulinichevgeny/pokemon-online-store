@@ -13,12 +13,18 @@
         <img src="https://badge.fury.io/js/npm.svg" /></a>
 </p>
 
+
 <p align=center>
     <img alt="GIF" src="public/preview.gif" width="600px" />
 </p>
 
 ## About
 This is my IT SHATLE React module graduation work. Made with HTML, Sass(SCSS), JavaScript, React, Redux and Material-UI. You are welcome!
+
+## Preview
+<p align=center>
+    <img alt="GIF" src="public/preview.png" width="1080px" />
+</p>
 
 ## Installation
 1. Clone this repository or download zip
