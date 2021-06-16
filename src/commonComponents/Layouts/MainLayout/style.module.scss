@@ -9,10 +9,6 @@
 
   cursor: pointer;
   background: url('../../../assets/img/clippy.png');
-  
-  @media (max-width: 600px) {
-    bottom: 4rem;
-  }
 
   &:hover {
     animation: shake 0.5s infinite;
@@ -96,5 +92,29 @@
   }
   &:active {
     background: url("../../../assets/img/background.bmp");
+  }
+}
+
+.foldersWrapper {
+  z-index: 1;
+  position: absolute;
+  top: 1rem;
+  left: 0;
+  font-weight: 400;
+  padding: 0 0.5rem;
+
+  .folder {
+    cursor: default;
+    text-align: center;
+    margin-bottom:2rem;
+  }
+  .folder:first-child {
+  }
+  .folder:nth-child(3) {
+    cursor: not-allowed;
+  }
+
+  img {
+    margin-bottom: 0.2rem;
   }
 }

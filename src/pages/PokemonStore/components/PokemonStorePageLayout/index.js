@@ -6,12 +6,13 @@ import styles from "./style.module.scss";
 
 const PokemonStorePageLayout = ({ pokemonsList, isLoading, handleGoToDetails, currentPage, handlePageChange }) => {
   return (
-      <div>
+      <div className={styles.pokemonStoreWrapper}>
         <h1>Pokemon Store Page</h1>
 
         <div className={styles.pokemonList}>
           { isLoading ? (
-              <CircularProgress/>
+              // <CircularProgress/>
+              <div className={styles.progressBar} />
           ) : (
               pokemonsList.map((pokemon) => (
                   <div key={pokemon.id}>

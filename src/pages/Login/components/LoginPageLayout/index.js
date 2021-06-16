@@ -8,6 +8,8 @@ const LoginPageLayout = ({ setLoginValues, handleSubmit }) => {
   return (
       <Box>
         <h1>Sign In</h1>
+
+        <img src="" alt=""/>
         <Box className={styles.authWrapper}>
           <img className={styles.authBrowser} src={browser} alt=""/>
           <form className={styles.loginForm} onSubmit={handleSubmit}>
