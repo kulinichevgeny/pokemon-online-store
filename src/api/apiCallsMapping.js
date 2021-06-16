@@ -4,8 +4,8 @@ import * as pokemonsStoreApi from "../pages/PokemonStore/api";
 import * as pokemonDetailsActions from "../pages/PokemonDetails/actions";
 import * as pokemonDetailsApi from "../pages/PokemonDetails/api";
 
-import * as loginActions from "../modules/Login/actions"
-import * as loginApi from "../modules/Login/api"
+import * as loginActions from "../pages/Login/actions"
+import * as loginApi from "../pages/Login/api"
 
 const apiCallsMapping = (action) => {
   const mapping = {
@@ -17,7 +17,7 @@ const apiCallsMapping = (action) => {
   };
 
   if (!mapping.hasOwnProperty(action.type)) {
-    // throw "Not mapped action";
+    throw Error("Not mapped action");
   }
 
   return mapping[action.type];

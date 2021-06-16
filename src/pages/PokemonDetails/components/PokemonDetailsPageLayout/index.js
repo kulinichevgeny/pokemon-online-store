@@ -1,6 +1,4 @@
-import React from "react";
-
-import styles from './style.module.scss'
+// import styles from "./style.module.scss";
 
 const PokemonDetailsPageLayout = props => {
   return (

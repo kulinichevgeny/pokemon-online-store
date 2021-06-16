@@ -18,7 +18,7 @@ const MainLayout = ({ children }) => {
           </div>
         </div>
         <div>
-          <div className={styles.clippy}></div>
+          <div className={styles.clippy} />
           <div>{children}</div>
         </div>
       </div>

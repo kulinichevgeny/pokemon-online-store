@@ -3,7 +3,7 @@ import { persistReducer } from "redux-persist";
 import { createBlacklistFilter } from "redux-persist-transform-filter";
 import storage from "redux-persist/lib/storage";
 
-import authorization from "../modules/Login/reducers"
+import authorization from "../pages/Login/reducers"
 import pokemonsManager from "../pages/PokemonStore/reducers";
 import pokemonDetails from "../pages/PokemonDetails/reducers";
 
