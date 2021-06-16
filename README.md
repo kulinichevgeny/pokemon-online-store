@@ -19,9 +19,11 @@
 </p>
 
 ## About
-This is my IT SHATLE React module graduation work. Made with HTML, Sass(SCSS), JavaScript, React, Redux and Material-UI. You are welcome!
+Pokémon Online Store app is my IT SHATLE React module graduation work. Made with HTML, Sass(SCSS), JavaScript, React, Redux and Material-UI. You are welcome!
 
 ## Preview
+While using this app press `F11` key to enable Browser Full Screen Mode for a better user experience ✨
+
 <p align=center>
     <img alt="GIF" src="public/preview.png" width="1080px" />
 </p>

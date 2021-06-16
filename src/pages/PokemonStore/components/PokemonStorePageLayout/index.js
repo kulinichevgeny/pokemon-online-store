@@ -1,9 +1,10 @@
 import React from "react";
 import { CircularProgress } from "@material-ui/core";
+import Pagination from '@material-ui/lab/Pagination';
 
 import styles from "./style.module.scss";
 
-const PokemonStorePageLayout = ({ pokemonsList, isLoading, handleGoToDetails }) => {
+const PokemonStorePageLayout = ({ pokemonsList, isLoading, handleGoToDetails, currentPage, handlePageChange }) => {
   return (
       <div>
         <h1>Pokemon Store Page</h1>
@@ -26,6 +27,17 @@ const PokemonStorePageLayout = ({ pokemonsList, isLoading, handleGoToDetails }) 
                     </div>
                   </div>
               )))}
+        </div>
+        <div className={styles.paginationWrapper}>
+          <div className={styles.pagination}>
+            <Pagination
+                onChange={handlePageChange}
+                page={currentPage}
+                count={5}
+                variant="outlined"
+                shape="rounded"
+            />
+          </div>
         </div>
       </div>
   )

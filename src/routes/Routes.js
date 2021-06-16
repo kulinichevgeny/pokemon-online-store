@@ -1,7 +1,7 @@
-import {Switch, Route} from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 
 import PrivateRoute from "./PrivateRoute";
-import {ROUTES} from "./routeNames";
+import { ROUTES } from "./routeNames";
 import HomePageContainer from "../pages/Home/containers/HomePageContainer";
 import PokemonDetailsPageContainer from "../pages/PokemonDetails/containers/PokemonDetailsPageContainer";
 import PokemonStorePageContainer from "../pages/PokemonStore/containers/PokemonStorePageContainer";
@@ -10,10 +10,10 @@ import LoginPageContainer from "../pages/Login/containers/LoginPageContainer";
 const Routes = () => {
   return (
       <Switch>
-          <PrivateRoute exact
-                        path={ROUTES.HOME_PAGE}
-                        component={HomePageContainer}
-          />
+        <PrivateRoute exact
+                      path={ROUTES.HOME_PAGE}
+                      component={HomePageContainer}
+        />
         <Route exact
                path={ROUTES.LOGIN_PAGE}
                component={LoginPageContainer}

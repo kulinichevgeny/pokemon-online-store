@@ -2,7 +2,6 @@ import { takeEvery, take, select } from "redux-saga/effects";
 import { REHYDRATE } from "redux-persist/es/constants";
 
 import { SIGN_IN_SUCCESS, SIGN_IN_FAIL } from "../actions";
-import { FUCK_YOU } from "../actions"
 import api from "../../../api/config";
 
 const authSelector = (state) => state.authorization;
