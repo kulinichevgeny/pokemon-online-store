@@ -6,7 +6,13 @@ import { loginSuccessSaga, loginSuccessWatcher, loginFailWatcher } from "../page
 import { signOutWatcher } from "../pages/Login/sagas/logoutSaga";
 
 function* rootSaga() {
-  yield all([loginSuccessSaga(), loginSuccessWatcher(), apiCallsSaga(), loginFailWatcher(), signOutWatcher()]);
+  yield all([
+    loginSuccessSaga(),
+    loginSuccessWatcher(),
+    apiCallsSaga(),
+    loginFailWatcher(),
+    signOutWatcher(),
+  ]);
 }
 
 export default rootSaga;

@@ -11,33 +11,37 @@ const PokemonStorePageContainer = () => {
   const dispatch = useDispatch();
   const history = useHistory();
 
-  const [currentPage, setCurrentPage] = useState(1);
+  const { pokemonsList, isLoading, pokemonPage } = useSelector(state => state.pokemonsManager);
+
+  const [currentPage, setCurrentPage] = useState(pokemonPage);
 
   const handlePageChange = useCallback((data, page) => {
     setCurrentPage(page);
-    console.log(page)
   },[])
 
-  const { pokemonsList, isLoading } = useSelector(state => state.pokemonsManager);
-
   useEffect(() => {
-    dispatch(GET_POKEMONS_REQUEST(currentPage))
-  }, [dispatch, currentPage]);
+    console.log('cur', currentPage)
+    console.log('poke', pokemonPage)
+    if (pokemonsList.length === 0 || pokemonPage !== currentPage)  {
+      dispatch(GET_POKEMONS_REQUEST(currentPage));
+    }
+  }, [dispatch, currentPage, pokemonPage]);
 
   const handleGoToDetails = useCallback((id) => {
     history.push(`${ROUTES.POKEMON_STORE}/${id}`);
   }, [history]);
 
+  // Ctrl + Q = LOG OUT
   useEffect(() => {
     const onKeypress = (event) => {
       if (event.key === '\u0011') {
         dispatch(SIGN_OUT())
       }
     }
-    document.addEventListener('keypress', onKeypress)
+    document.addEventListener('keypress', onKeypress);
 
     return () => {
-      document.removeEventListener('keypress', onKeypress)
+      document.removeEventListener('keypress', onKeypress);
     };
   }, [dispatch]);
 

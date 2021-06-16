@@ -1,5 +1,4 @@
 import React from "react";
-import { CircularProgress } from "@material-ui/core";
 import Pagination from '@material-ui/lab/Pagination';
 
 import styles from "./style.module.scss";
@@ -11,7 +10,6 @@ const PokemonStorePageLayout = ({ pokemonsList, isLoading, handleGoToDetails, cu
 
         <div className={styles.pokemonList}>
           { isLoading ? (
-              // <CircularProgress/>
               <div className={styles.progressBar} />
           ) : (
               pokemonsList.map((pokemon) => (

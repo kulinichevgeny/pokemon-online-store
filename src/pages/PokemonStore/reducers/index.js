@@ -6,12 +6,14 @@ const defaultState = {
   pokemonsList: [],
   isLoading: false,
   errors: null,
+  pokemonPage: 1,
 };
 
 const pokemonsManager = handleActions({
-  [actions.GET_POKEMONS_REQUEST]: (state) => ({
+  [actions.GET_POKEMONS_REQUEST]: (state, {payload}) => ({
     ...state,
     isLoading: true,
+    pokemonPage: payload,
   }),
   [actions.GET_POKEMONS_SUCCESS]: (state, {payload}) => ({
     ...state,
