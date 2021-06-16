@@ -1,20 +1,49 @@
 @import '../../../../styles/vars';
 
+.authWrapper {
+  position: relative;
+  max-width: 681px;
+  margin: 1rem auto;
+}
+
+.authBrowser {
+  @media (max-width: 700px) {
+    display: none;
+  }
+}
+
+
 .loginForm {
+  position: absolute;
+  left: 0;
+  right: 0;
+
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 16rem;
+
+  margin: -20.5rem auto;
+
+  @media (max-width: 700px) {
+    margin: 0;
+
+  }
 }
 
 .loginInput {
   font-family: inherit !important;
-  border: 2px solid $white !important;
-  border-right-color: $border-color !important;
-  border-bottom-color: $border-color !important;
+  border: 2px inset $white !important;
   background-color: $silver !important;
 
   margin: 1rem !important;
+
+  @media (max-width: 700px) {
+    border-width: 2px !important;
+    border-style: outset !important;
+    border-color: buttonface !important;
+    border-right-color: $border-color !important;
+    border-bottom-color: $border-color !important;
+  }
 }
 
 .loginButton {

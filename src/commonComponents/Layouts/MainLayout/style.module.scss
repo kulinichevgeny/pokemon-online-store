@@ -1,13 +1,22 @@
 @import '../../../styles/vars';
 
 .clippy {
-  position: absolute;
+  position: fixed;
   bottom: 1rem;
   right: 1rem;
   width: 129px;
   height: 117px;
 
+  cursor: pointer;
   background: url('../../../assets/img/clippy.png');
+  
+  @media (max-width: 600px) {
+    bottom: 4rem;
+  }
+
+  &:hover {
+    animation: shake 0.5s infinite;
+  }
 }
 
 .navigationBar {
@@ -23,6 +32,10 @@
   border-top: 2px outset $white;
 
   padding: 0 0.3rem;
+
+  @media (max-width: 600px) {
+    font-size: 0.8rem;
+  }
 
   &Start {
     width: 5rem;
@@ -52,8 +65,12 @@
   &Pages {
     display: flex;
     justify-content: space-between;
-    flex-basis: 490px;
+    flex-basis: 340px;
     width: 100%;
+    
+    @media (max-width: 600px) {
+      flex-basis: 290px;
+    }
   }
 }
 
