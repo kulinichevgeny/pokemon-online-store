@@ -1,3 +1,3 @@
 import api from "../../../api/config";
 
-export const getPokemons = () => api.get('/products');
+export const getPokemons = (pageNumber) => api.get(`/products?page=${pageNumber}&limit=30`);

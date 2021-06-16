@@ -1,10 +1,9 @@
-import {takeEvery} from "redux-saga/effects";
+import { takeEvery } from "redux-saga/effects";
 
 import { SIGN_OUT } from "../actions";
 
 function signOutSaga(action) {
   localStorage.clear();
-
   window.location.reload();
 }
 

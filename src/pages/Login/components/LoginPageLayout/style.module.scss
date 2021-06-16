@@ -6,12 +6,6 @@
   margin: 1rem auto;
 }
 
-.authBrowser {
-  @media (max-width: 700px) {
-    display: none;
-  }
-}
-
 
 .loginForm {
   position: absolute;
@@ -23,11 +17,6 @@
   align-items: center;
 
   margin: -20.5rem auto;
-
-  @media (max-width: 700px) {
-    margin: 0;
-
-  }
 }
 
 .loginInput {
@@ -36,14 +25,6 @@
   background-color: $silver !important;
 
   margin: 1rem !important;
-
-  @media (max-width: 700px) {
-    border-width: 2px !important;
-    border-style: outset !important;
-    border-color: buttonface !important;
-    border-right-color: $border-color !important;
-    border-bottom-color: $border-color !important;
-  }
 }
 
 .loginButton {
