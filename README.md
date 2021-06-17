@@ -25,7 +25,7 @@ Pokémon Online Store app is my IT SHATLE React module graduation work. Made wit
 While using this app press `F11` key to enable Browser Full Screen Mode for a better user experience ✨
 
 <p align=center>
-    <img alt="GIF" src="public/bulbasaur.gif" width="1080px" />
+    <img alt="GIF" src="public/preview.gif" width="1080px" />
 </p>
 
 ## Installation
