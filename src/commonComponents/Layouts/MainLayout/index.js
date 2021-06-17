@@ -7,6 +7,7 @@ import styles from "./style.module.scss";
 import { Box } from "@material-ui/core";
 import computer from "../../../assets/img/computer.png";
 import folder from "../../../assets/img/folder.png";
+import spotify from "../../../assets/img/spotify.png";
 
 const MainLayout = ({ children }) => {
   return (
@@ -24,6 +25,10 @@ const MainLayout = ({ children }) => {
           <Box className={styles.folder}>
             <img src={folder} alt=""/>
             <p>18+</p>
+          </Box>
+          <Box className={styles.folder}>
+            <img src={spotify} alt=""/>
+            <p>Spotify</p>
           </Box>
         </Box>
 

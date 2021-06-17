@@ -29,10 +29,6 @@
 
   padding: 0 0.3rem;
 
-  @media (max-width: 600px) {
-    font-size: 0.8rem;
-  }
-
   &Start {
     width: 5rem;
     height: 32px;
@@ -61,7 +57,7 @@
   &Pages {
     display: flex;
     justify-content: space-between;
-    flex-basis: 340px;
+    flex-basis: 520px;
     width: 100%;
     
     @media (max-width: 600px) {
@@ -98,8 +94,8 @@
 .foldersWrapper {
   z-index: 1;
   position: absolute;
-  top: 1rem;
-  left: 0;
+  top: 2.5rem;
+  left: 0.5rem;
   font-weight: 400;
   padding: 0 0.5rem;
 
