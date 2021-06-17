@@ -18,3 +18,12 @@ $border-color: #424242;
   90% { transform: translate(1px, 2px) rotate(0deg); }
   100% { transform: translate(1px, -2px) rotate(-1deg); }
 }
+
+@keyframes progress {
+  0% { background-image: url('../assets/img/progress0.png'); }
+  20% { background-image: url('../assets/img/progress20.png'); }
+  40% { background-image: url('../assets/img/progress40.png'); }
+  60% { background-image: url('../assets/img/progress60.png'); }
+  80% { background-image: url('../assets/img/progress80.png'); }
+  100% { background-image: url('../assets/img/progress.png'); }
+}

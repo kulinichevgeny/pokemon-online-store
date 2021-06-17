@@ -2,11 +2,36 @@ import { Link } from "react-router-dom";
 import * as _ from "lodash";
 
 import { ROUTES } from "../../../routes/routeNames";
+
 import styles from "./style.module.scss";
+import { Box } from "@material-ui/core";
+import computer from "../../../assets/img/computer.png";
+import folder from "../../../assets/img/folder.png";
+import spotify from "../../../assets/img/spotify.png";
 
 const MainLayout = ({ children }) => {
   return (
       <div>
+
+        <Box className={styles.foldersWrapper}>
+          <Box className={styles.folder}>
+            <img src={computer} alt=""/>
+            <p>Computer</p>
+          </Box>
+          <Box className={styles.folder}>
+            <img src={folder} alt=""/>
+            <p>Pokemons</p>
+          </Box>
+          <Box className={styles.folder}>
+            <img src={folder} alt=""/>
+            <p>18+</p>
+          </Box>
+          <Box className={styles.folder}>
+            <img src={spotify} alt=""/>
+            <p>Spotify</p>
+          </Box>
+        </Box>
+
         <div className={styles.navigationBar}>
           <button className={styles.navigationBarStart}>Start</button>
           <div className={styles.navigationBarPages}>

@@ -1,5 +1,10 @@
 @import '../../../../styles/vars';
 
+.pokemonStoreWrapper {
+  position: relative;
+  z-index: 1000;
+}
+
 .pokemonList {
   display: flex;
   flex-wrap: wrap;
@@ -84,5 +89,18 @@
 .pagination {
   max-width: 268px;
   padding-top: 2.4rem;
+  margin: 0 auto;
+}
+
+.progressBar {
+  position: relative;
+  top: 15rem;
+  width: 296px;
+  height: 119px;
+
+  background-image: url('../../../../assets/img/progress0.png');
+  animation: progress 0.8s 1;
+  animation-fill-mode: forwards;
+
   margin: 0 auto;
 }

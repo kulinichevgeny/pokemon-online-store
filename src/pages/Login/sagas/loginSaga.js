@@ -26,7 +26,7 @@ export function* loginSuccessSaga(action) {
   }
 }
 
-export function* failSaga(action) {
+export function* loginFailSaga(action) {
    const { response } = action.payload;
 
    alert(response);
@@ -37,5 +37,5 @@ export function* loginSuccessWatcher(action) {
 }
 
 export function* loginFailWatcher(action) {
-  yield takeEvery(SIGN_IN_FAIL, failSaga);
+  yield takeEvery(SIGN_IN_FAIL, loginFailSaga);
 }

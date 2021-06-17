@@ -3,9 +3,9 @@ import { handleActions } from "redux-actions";
 import * as actions from "../actions";
 
 const defaultState = {
-  pokemonInfo: {},
+  pokemonInfo: { },
   isLoading: false,
-  errors: '',
+  errors: null,
 };
 
 const pokemonDetailsReducer = handleActions({
@@ -18,7 +18,7 @@ const pokemonDetailsReducer = handleActions({
     isLoading: false,
     pokemonInfo: payload.response,
   }),
-  [actions.GET_POKEMON_DETAILS_FAIL()]: (state, {payload}) => ({
+  [actions.GET_POKEMON_DETAILS_FAIL]: (state, {payload}) => ({
     ...state,
     isLoading: false,
     errors: payload.response,

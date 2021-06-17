@@ -1,17 +1,16 @@
 import React from "react";
-import { CircularProgress } from "@material-ui/core";
 import Pagination from '@material-ui/lab/Pagination';
 
 import styles from "./style.module.scss";
 
 const PokemonStorePageLayout = ({ pokemonsList, isLoading, handleGoToDetails, currentPage, handlePageChange }) => {
   return (
-      <div>
+      <div className={styles.pokemonStoreWrapper}>
         <h1>Pokemon Store Page</h1>
 
         <div className={styles.pokemonList}>
           { isLoading ? (
-              <CircularProgress/>
+              <div className={styles.progressBar} />
           ) : (
               pokemonsList.map((pokemon) => (
                   <div key={pokemon.id}>

@@ -24,7 +24,7 @@ const authorizationReducer = handleActions({
       isAuthorized: true,
       userInfo: accountInfo,
       accessToken,
-    }
+    };
   },
   [actions.SIGN_IN_FAIL]: (state, { payload }) => ({
     ...state,

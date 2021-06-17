@@ -18,11 +18,15 @@ const LoginPageContainer = () => {
   const handleSubmit = useCallback((event) => {
     event.preventDefault();
 
-    if (loginValues.password !== '') dispatch(SIGN_IN_REQUEST(loginValues));
+    if (loginValues.password !== '') {
+      dispatch(SIGN_IN_REQUEST(loginValues));
+    } else {
+      alert('The password is required');
+    }
   },[dispatch, loginValues]);
 
   useLayoutEffect(() => {
-    if (isAuthorized) history.push(ROUTES.POKEMON_STORE)
+    if (isAuthorized) history.push(ROUTES.POKEMON_STORE);
   }, [isAuthorized, history]);
 
   return <LoginPageLayout

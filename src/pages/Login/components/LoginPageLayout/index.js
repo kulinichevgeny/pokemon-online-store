@@ -8,6 +8,7 @@ const LoginPageLayout = ({ setLoginValues, handleSubmit }) => {
   return (
       <Box>
         <h1>Sign In</h1>
+
         <Box className={styles.authWrapper}>
           <img className={styles.authBrowser} src={browser} alt=""/>
           <form className={styles.loginForm} onSubmit={handleSubmit}>
@@ -31,7 +32,7 @@ const LoginPageLayout = ({ setLoginValues, handleSubmit }) => {
                   variant="filled"
               />
             </Box>
-            <Button className={styles.loginButton} type='submit'>Login</Button>
+            <Button className={styles.loginButton} type='submit'>Sign In</Button>
           </form>
         </Box>
       </Box>

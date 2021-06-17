@@ -6,6 +6,7 @@ import storage from "redux-persist/lib/storage";
 import authorization from "../pages/Login/reducers"
 import pokemonsManager from "../pages/PokemonStore/reducers";
 import pokemonDetails from "../pages/PokemonDetails/reducers";
+import registration from "../pages/Register/reducers";
 
 const authorizationBlackListedFields = createBlacklistFilter('authorization', [
   'isLoading',
@@ -13,6 +14,7 @@ const authorizationBlackListedFields = createBlacklistFilter('authorization', [
 ]);
 
 const rootReducer = combineReducers({
+  registration,
   authorization,
   pokemonsManager,
   pokemonDetails,
