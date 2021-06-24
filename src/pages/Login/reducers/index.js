@@ -20,7 +20,7 @@ const authorizationReducer = handleActions({
 
     return {
       ...state,
-      isLoading: true,
+      isLoading: false,
       isAuthorized: true,
       userInfo: accountInfo,
       accessToken,

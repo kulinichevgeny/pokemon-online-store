@@ -1,7 +1,20 @@
 @import '../../../../styles/vars';
 
-.hueta {
-  margin-left: 400px;
+.totalPrice {
+  font-size: 2rem;
+  text-align: center;
+  font-weight: 600;
+  padding: 1rem 0 0 1rem;
+  margin-bottom: 2rem;
+}
+
+.createOrder {
+  margin-left: 10rem;
+}
+
+.pokemonInfoWrapper {
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
 .progressBar {

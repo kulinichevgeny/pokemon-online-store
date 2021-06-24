@@ -5,9 +5,9 @@ import FormControl from '@material-ui/core/FormControl';
 import InputLabel from '@material-ui/core/InputLabel';
 
 import styles from "./style.module.scss";
-import paint from "../../../../assets/img/signupBackground.png";
+import paint from "../../../../static/img/signupBackground.png";
 
-const RegisterPageLayout = ({ setRegisterValues, handleSubmit, gender, handleGenderChange }) => {
+const RegisterPageLayout = ({ registerValues, setRegisterValues, handleSubmit }) => {
   return (
       <Box>
         <h1>Sign Up</h1>
@@ -22,7 +22,7 @@ const RegisterPageLayout = ({ setRegisterValues, handleSubmit, gender, handleGen
                       className={styles.loginInput}
                       name='email'
                       onChange={setRegisterValues}
-                      placeholder='Email'
+                      placeholder='Email ∗'
                       type="email"
                       variant="filled"
                   />
@@ -32,7 +32,7 @@ const RegisterPageLayout = ({ setRegisterValues, handleSubmit, gender, handleGen
                       className={styles.loginInput}
                       name='password'
                       onChange={setRegisterValues}
-                      placeholder='Password'
+                      placeholder='Password ∗'
                       type="password"
                       variant="filled"
                   />
@@ -42,7 +42,7 @@ const RegisterPageLayout = ({ setRegisterValues, handleSubmit, gender, handleGen
                       className={styles.loginInput}
                       name='confirmedPassword'
                       onChange={setRegisterValues}
-                      placeholder='Confirm password'
+                      placeholder='Confirm password ∗'
                       type="password"
                       variant="filled"
                   />
@@ -54,7 +54,7 @@ const RegisterPageLayout = ({ setRegisterValues, handleSubmit, gender, handleGen
                       className={styles.loginInput}
                       name='firstName'
                       onChange={setRegisterValues}
-                      placeholder='First Name'
+                      placeholder='First Name ∗'
                       type="text"
                       variant="filled"
                   />
@@ -64,7 +64,7 @@ const RegisterPageLayout = ({ setRegisterValues, handleSubmit, gender, handleGen
                       className={styles.loginInput}
                       name='lastName'
                       onChange={setRegisterValues}
-                      placeholder='Last Name'
+                      placeholder='Last Name ∗'
                       type="text"
                       variant="filled"
                   />
@@ -74,36 +74,26 @@ const RegisterPageLayout = ({ setRegisterValues, handleSubmit, gender, handleGen
                       className={styles.loginInput}
                       name='phone'
                       onChange={setRegisterValues}
-                      placeholder='Phone Number'
+                      placeholder='Phone Number ∗'
                       type="tel"
                       variant="filled"
                   />
                 </Box>
               </Box>
-              {/*<FormControl>*/}
-              {/*  <p>Gender</p>*/}
-              {/*  <InputLabel id="demo-simple-select-label" />*/}
-              {/*  <Select*/}
-              {/*      labelId="demo-simple-select-label"*/}
-              {/*      id="demo-simple-select"*/}
-              {/*      value={gender}*/}
-              {/*      onChange={handleGenderChange}*/}
-              {/*  >*/}
-              {/*    <MenuItem value={'male'}>Male</MenuItem>*/}
-              {/*    <MenuItem value={'female'}>Female</MenuItem>*/}
-              {/*  </Select>*/}
-              {/*</FormControl>*/}
             </Box>
-            <Box>
-              <TextField
-                  className={styles.loginInput}
-                  name='gender'
+            <FormControl>
+              <InputLabel id="demo-simple-select-label" />
+              <Select
+                  labelId="demo-simple-select-label"
+                  id="demo-simple-select"
+                  value={registerValues.gender}
                   onChange={setRegisterValues}
-                  placeholder='Gender'
-                  type="text"
-                  variant="filled"
-              />
-            </Box>
+                  name={'gender'}
+              >
+                <MenuItem value={'male'}>Male</MenuItem>
+                <MenuItem value={'female'}>Female</MenuItem>
+              </Select>
+            </FormControl>
             <Button className={styles.loginButton} type='submit'>Sign Up</Button>
           </form>
         </Box>

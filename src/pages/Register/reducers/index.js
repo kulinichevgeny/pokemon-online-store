@@ -14,7 +14,7 @@ const registrationReducer = handleActions({
     ...state,
     isLoading: true,
   }),
-  [actions.SIGN_UP_SUCCESS]: (state, { payload }) => {
+  [actions.SIGN_UP_SUCCESS]: (state, {payload}) => {
     const { success, message } =  payload.response;
 
     return {
@@ -24,7 +24,7 @@ const registrationReducer = handleActions({
       message,
     };
   },
-  [actions.SIGN_UP_FAIL]: (state, { payload }) => ({
+  [actions.SIGN_UP_FAIL]: (state, {payload}) => ({
     ...state,
     isLoading: false,
     errors: payload.response,

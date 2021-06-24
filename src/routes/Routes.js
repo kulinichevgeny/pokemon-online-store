@@ -7,6 +7,8 @@ import PokemonDetailsPageContainer from "../pages/PokemonDetails/containers/Poke
 import PokemonStorePageContainer from "../pages/PokemonStore/containers/PokemonStorePageContainer";
 import LoginPageContainer from "../pages/Login/containers/LoginPageContainer";
 import RegisterPageContainer from "../pages/Register/containers/RegisterPageContainer";
+import CartPageContainer from "../pages/Cart/containers/CartPageContainer";
+import ProfilePageContainer from "../pages/Profile/containers/ProfilePageContainer";
 
 const Routes = () => {
   return (
@@ -30,6 +32,14 @@ const Routes = () => {
         <PrivateRoute exact
                       path={ROUTES.POKEMON_DETAILS}
                       component={PokemonDetailsPageContainer}
+        />
+        <PrivateRoute exact
+                      path={ROUTES.CART}
+                      component={CartPageContainer}
+        />
+        <PrivateRoute exact
+                      path={ROUTES.PROFILE}
+                      component={ProfilePageContainer}
         />
       </Switch>
   )

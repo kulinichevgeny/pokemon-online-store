@@ -6,18 +6,20 @@ import { SIGN_OUT } from "../../Login/actions";
 
 const HomePageContainer = () => {
   const dispatch = useDispatch();
+
+  // Ctrl + Q = LOGOUT
   useEffect(() => {
-    const onKeypress = (event) => {
+    const onKeyPress = (event) => {
       if (event.key === '\u0011') {
         dispatch(SIGN_OUT())
       }
-    }
-    document.addEventListener('keypress', onKeypress)
-
-    return () => {
-      document.removeEventListener('keypress', onKeypress)
     };
+    document.addEventListener('keypress', onKeyPress);
+    return () => {
+      document.removeEventListener('keypress', onKeyPress);
+    }
   }, [dispatch]);
+
   return <HomePageLayout />;
 };
 

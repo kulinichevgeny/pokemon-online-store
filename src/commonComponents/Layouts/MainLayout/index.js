@@ -5,9 +5,9 @@ import { ROUTES } from "../../../routes/routeNames";
 
 import styles from "./style.module.scss";
 import { Box } from "@material-ui/core";
-import computer from "../../../assets/img/computer.png";
-import folder from "../../../assets/img/folder.png";
-import spotify from "../../../assets/img/spotify.png";
+import computer from "../../../static/img/computer.png";
+import folder from "../../../static/img/folder.png";
+import spotify from "../../../static/img/spotify.png";
 
 const MainLayout = ({ children }) => {
   return (
