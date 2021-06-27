@@ -30,11 +30,12 @@ const PokemonDetailsPageContainer = () => {
     dispatch(ADD_ITEM_REQUEST(pokemonInfoToAdd))
   },[dispatch, pokemonInfo]);
 
-
   return <PokemonDetailsPageLayout
       pokemonInfo={pokemonInfo}
       isLoading={isLoading}
       handleAddItemToCart={handleAddItemToCart}
+      abilities={pokemonInfo.abilities}
+      stats={pokemonInfo.stats}
   />;
 };
 

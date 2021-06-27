@@ -4,7 +4,7 @@ import * as actions from "../actions";
 
 const defaultState = {
   success: false,
-  message: 'You son of a bitch!',
+  message: '',
   isLoading: false,
   errors: null,
 };

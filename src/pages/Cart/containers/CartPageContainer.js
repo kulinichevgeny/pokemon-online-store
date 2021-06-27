@@ -1,4 +1,4 @@
-import { useCallback, useEffect } from "react";
+import {useCallback, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import CartPageLayout from "../components/CartPageLayout";
@@ -15,7 +15,9 @@ const CartPageContainer = () => {
   }, [dispatch])
 
   const handleDeleteCartItem = useCallback((id) => {
-    dispatch(DELETE_ITEM_REQUEST(id));
+    let checked = window.confirm('Are you sure you want to delete?');
+
+    if (checked) dispatch(DELETE_ITEM_REQUEST(id));
   },[dispatch])
 
   const handleCreateOrder = useCallback((event) => {
@@ -27,7 +29,13 @@ const CartPageContainer = () => {
       itemsList,
     };
 
-    dispatch(CREATE_ORDER_REQUEST(cartInfoToOrder))
+    if (totalPrice !== 0) {
+      const checked = window.confirm('Are you sure you want create order?');
+
+      if (checked) dispatch(CREATE_ORDER_REQUEST(cartInfoToOrder))
+    } else {
+     alert('Your cart is empty!');
+    }
   },[dispatch, itemsList, totalPrice, customerId]);
 
   return <CartPageLayout

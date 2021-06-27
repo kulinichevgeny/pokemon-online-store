@@ -1,0 +1,53 @@
+@import '../../../../styles/vars';
+
+.profileWrapper {
+  color: $black;
+  max-width: 50%;
+  border: 3px solid $white;
+  border-right-color: $border-color;
+  border-bottom-color: $border-color;
+  background: $silver;
+
+  padding: 1.5rem 2rem;
+  margin: 0 auto;
+  
+  & > h2 {
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .checkOrderHistory {
+    text-align: center;
+    margin-top: 1rem;
+
+    button {
+      @include button;
+      max-width: 6.5rem;
+      padding: 0.4rem 0 0.3rem;
+    }
+  }
+
+}
+
+.profileContent {
+  display: flex;
+  flex-wrap: wrap;
+
+  p {
+    width: 50%;
+    margin-bottom: 1rem;
+  }
+}
+
+.orderWrapper {
+  border: 2px inset $white;
+  border-radius: 1px;
+
+  padding: 0.5rem;
+  margin-top: 1rem;
+
+  .orderDate {
+    margin-top: 0.5rem;
+  }
+}

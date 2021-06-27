@@ -46,28 +46,10 @@
   }
 
   &Button {
-    width: 100%;
-    border-width: 2px;
-    border-style: outset;
-    border-color: buttonface;
-    border-right-color: $border-color;
-    border-bottom-color: $border-color;
-    border-radius: 1px;
-
-    transition: 0.1s ease;
+    @include button;
 
     padding: 0.3rem 0 0.2rem;
     margin-top: 1rem;
-
-    &:hover {
-      border: 2px inset $white;
-      background: $silver;
-      color: $black;
-      box-shadow: -1px -1px $black;
-    }
-    &:active {
-      background: url("../../../../static/img/background.bmp");
-    }
   }
 }
 
@@ -92,14 +74,5 @@
 }
 
 .progressBar {
-  position: relative;
-  top: 15rem;
-  width: 296px;
-  height: 119px;
-
-  background-image: url('../../../../static/img/progress0.png');
-  animation: progress 0.8s 1;
-  animation-fill-mode: forwards;
-
-  margin: 0 auto;
+  @include progressBar;
 }

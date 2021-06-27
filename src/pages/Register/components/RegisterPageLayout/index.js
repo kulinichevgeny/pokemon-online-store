@@ -13,7 +13,7 @@ const RegisterPageLayout = ({ registerValues, setRegisterValues, handleSubmit })
         <h1>Sign Up</h1>
 
         <Box className={styles.authWrapper}>
-          <img className={styles.authBrowser} src={paint} alt=""/>
+          <img src={paint} alt=""/>
           <form className={styles.loginForm} onSubmit={handleSubmit}>
             <Box className={styles.registerColumn}>
               <Box>

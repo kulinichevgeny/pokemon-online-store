@@ -1,31 +1,77 @@
 @import '../../../../styles/vars';
 
+.cartWrapper {
+  color: $black;
+  max-width: 60%;
+  border: 3px solid $white;
+  border-right-color: $border-color;
+  border-bottom-color: $border-color;
+  background: $silver;
+
+  padding: 1.5rem 2rem;
+  margin: 0 auto;
+}
+
+
 .totalPrice {
   font-size: 2rem;
   text-align: center;
   font-weight: 600;
   padding: 1rem 0 0 1rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
-.createOrder {
-  margin-left: 10rem;
+.createOrderWrapper {
+  text-align: center;
+
+  .createOrderButton {
+    @include button;
+    font-size: 1.2rem;
+    font-weight: 600;
+    max-width: 8rem;
+
+    padding: 0.45rem  0.3rem;
+  }
 }
 
 .pokemonInfoWrapper {
-  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
   margin-bottom: 2rem;
 }
 
+.pokemonInfoContent {
+  text-align: center;
+  border: 2px solid $white;
+  border-right-color: $border-color;
+  border-bottom-color: $border-color;
+
+  padding: 1rem 1rem 0.7rem;
+  margin: 0.5rem;
+
+  .pokemonName {
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-align: center;
+    text-transform: capitalize;
+  }
+  .pokemonPrice {
+    margin: 0.3rem 0 0.8rem;
+  }
+  .pokemonDelete {
+    @include button;
+    max-width: 4.5rem;
+    padding: 0.2rem 0 0.1rem;
+  }
+
+  img {
+    border: 2px inset $white;
+    border-radius: 1px;
+
+    margin: 0.5rem 0;
+  }
+}
+
 .progressBar {
-  position: relative;
-  top: 15rem;
-  width: 296px;
-  height: 119px;
-
-  background-image: url('../../../../static/img/progress0.png');
-  animation: progress 0.8s 1;
-  animation-fill-mode: forwards;
-
-  margin: 0 auto;
+  @include progressBar;
 }

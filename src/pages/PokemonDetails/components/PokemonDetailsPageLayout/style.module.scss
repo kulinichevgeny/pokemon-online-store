@@ -1,18 +1,111 @@
 @import '../../../../styles/vars';
 
-.hueta {
-  margin-left: 400px;
+.pokemonDetailsWrapper {
+  position: relative;
+  z-index: 1;
+  color: $black;
+  max-width: 50%;
+  max-height: 85vh;
+  overflow-y: auto;
+  border: 3px solid $white;
+  border-right-color: $border-color;
+  border-bottom-color: $border-color;
+  background: $silver;
+
+  padding: 1.5rem 2rem;
+  margin: 0 auto;
+
+  .pokemonDetailsPreview {
+    font-size: 2rem;
+    text-transform: capitalize;
+    text-align: center;
+
+    img {
+      border: 2px inset $white;
+      border-radius: 1px;
+      margin-top: 1rem;
+    }
+  }
+}
+
+.statsTitle,
+.abilitiesTitle {
+  font-size: 1.4rem;
+  font-weight: 400;
+  text-decoration: underline;
+}
+.abilitiesTitle {
+  margin-top: 2rem;
+}
+
+.statsWrapper {
+  display: flex;
+  flex-wrap: wrap;
+
+  border: 2px inset $white;
+  border-radius: 1px;
+
+  margin-top: 0.5rem;
+
+  .statsContent {
+    width: 33.33333%;
+    text-transform: capitalize;
+
+    padding: 0 1rem;
+    margin-bottom: 0.5rem;
+  }
+  .statTitle {
+    font-size: 1.1rem;
+    margin-top: 0.6rem;
+  }
+  .statValue {
+    font-size: 1.3rem;
+    margin-top: 0.5rem;
+  }
+}
+
+.abilitiesWrapper {
+  border: 2px inset $white;
+  border-radius: 1px;
+  margin-top: 0.5rem;
+
+  .abilitiesContent {
+    padding: 0.5rem 1rem;
+  }
+
+  .abilityTitle {
+    font-size: 1.2rem;
+    text-transform: capitalize;
+  }
+  .abilityDescription {
+    font-size: 1.1rem;
+    line-height: 1.4rem;
+    text-align: justify;
+    margin-top: 0.4rem;
+  }
 }
 
 .progressBar {
-  position: relative;
-  top: 15rem;
-  width: 296px;
-  height: 119px;
+  @include progressBar;
+}
 
-  background-image: url('../../../../static/img/progress0.png');
-  animation: progress 0.8s 1;
-  animation-fill-mode: forwards;
+.addToCart {
+  &Wrapper {
+    text-align: center;
+    margin-top: 2rem;
+  }
 
-  margin: 0 auto;
+  &Title {
+    font-size: 1.2rem;
+  }
+
+  &Button {
+    @include button;
+    font-size: 1.2rem;
+    font-weight: 600;
+    max-width: 7rem;
+
+    margin-top: 0.7rem;
+    padding: 0.45rem  0.3rem;
+  }
 }

@@ -1,4 +1,4 @@
-export const POKEMON_STATS_MAP = {
+export const POKEMON_ABILITIES_MAP = {
   hp: '',
   attack: '',
   defence: '',
