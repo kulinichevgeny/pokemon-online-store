@@ -1,9 +1,9 @@
-import { useCallback, useLayoutEffect, useState } from "react";
+import React, { useCallback, useLayoutEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 
-import useForm from "../../../hooks/useForm";
 import RegisterPageLayout from "../components/RegisterPageLayout";
+import { useForm } from "../../../hooks/";
 import { SIGN_UP_REQUEST } from "../actions";
 import { ROUTES } from "../../../routes/routeNames";
 
@@ -20,20 +20,22 @@ const RegisterPageContainer = () => {
     firstName: '',
     lastName: '',
     phone: '',
+    gender: 'male',
   });
-
-  // const [gender, setGenderValue] = useState();
-
-  // const handleGenderChange = (event) => {
-  //   setGenderValue(event.target.value)
-  // }
 
   const handleSubmit = useCallback((event) => {
     event.preventDefault();
 
-    dispatch(SIGN_UP_REQUEST(registerValues));
+    const {confirmedPassword, ...requestBody} = registerValues;
+
+    if (registerValues.password === registerValues.confirmedPassword) {
+      dispatch(SIGN_UP_REQUEST(requestBody));
+    } else {
+      alert('The password and confirm password fields do not match');
+    }
   },[dispatch, registerValues]);
 
+  // Success registration redirect to Login Page
   useLayoutEffect(() => {
     if (success) {
       alert(message);
@@ -46,8 +48,8 @@ const RegisterPageContainer = () => {
       loginValues={registerValues}
       setRegisterValues={setRegisterValues}
       handleSubmit={handleSubmit}
-      // gender={gender}
-      // handleGenderChange={handleGenderChange}
+      handleChange={setRegisterValues}
+      registerValues={registerValues}
   />;
 };
 

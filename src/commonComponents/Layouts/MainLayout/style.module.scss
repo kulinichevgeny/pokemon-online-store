@@ -8,7 +8,7 @@
   height: 117px;
 
   cursor: pointer;
-  background: url('../../../assets/img/clippy.png');
+  background: url('../../../static/img/clippy.png');
 
   &:hover {
     animation: shake 0.5s infinite;
@@ -30,81 +30,34 @@
   padding: 0 0.3rem;
 
   &Start {
-    width: 5rem;
-    height: 32px;
-    text-align: right;
-    font-weight: 700;
-    color: $black;
-
-    border-width: 2px;
-    border-style: outset;
-    border-color: buttonface;
-    border-right-color: $border-color;
-    border-bottom-color: $border-color;
-    border-radius: 1px;
-    background: url("../../../assets/img/start.png") top -1px left 3px no-repeat;
-
-    margin-right: 0.4rem;
-    padding: 0.1rem 0.4rem;
-
-    &:active {
-      border: 2px inset $white;
-      color: $black;
-      box-shadow: -1px -1px $black;
-    }
+    @include startButton;
   }
 
   &Pages {
     display: flex;
     justify-content: space-between;
-    flex-basis: 520px;
+    flex-basis: 666px;
     width: 100%;
-    
-    @media (max-width: 600px) {
-      flex-basis: 290px;
-    }
   }
 }
 
 .pageSwitchers {
+  @include button;
   font-weight: 600;
-  width: 100%;
-  border-width: 2px;
-  border-style: outset;
-  border-color: buttonface;
-  border-right-color: $border-color;
-  border-bottom-color: $border-color;
-  border-radius: 1px;
-
-  transition: 0.1s ease;
-
   padding: 0.4rem 0.5rem;
-
-  &:hover {
-    border: 2px inset $white;
-    background: $silver;
-    color: $black;
-    box-shadow: -1px -1px $black;
-  }
-  &:active {
-    background: url("../../../assets/img/background.bmp");
-  }
 }
 
 .foldersWrapper {
-  z-index: 1;
   position: absolute;
   top: 2.5rem;
   left: 0.5rem;
-  font-weight: 400;
+  font-weight: 500;
   padding: 0 0.5rem;
 
   .folder {
     cursor: default;
     text-align: center;
     margin-bottom:2rem;
-  }
-  .folder:first-child {
   }
   .folder:nth-child(3) {
     cursor: not-allowed;

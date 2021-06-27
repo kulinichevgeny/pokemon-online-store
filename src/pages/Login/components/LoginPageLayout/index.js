@@ -2,7 +2,7 @@ import React from "react";
 import { Box, Button, TextField } from "@material-ui/core";
 
 import styles from "./style.module.scss";
-import browser from "../../../../assets/img/authBackground.png";
+import browser from "../../../../static/img/authBackground.png";
 
 const LoginPageLayout = ({ setLoginValues, handleSubmit }) => {
   return (

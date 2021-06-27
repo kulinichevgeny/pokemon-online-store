@@ -4,4 +4,6 @@ export const ROUTES = {
   SIGN_IN: '/login',
   POKEMON_STORE: '/pokemon',
   POKEMON_DETAILS: '/pokemon/:id',
+  CART: '/cart',
+  PROFILE: '/profile',
 };

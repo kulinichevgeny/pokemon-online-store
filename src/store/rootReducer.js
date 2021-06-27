@@ -7,6 +7,8 @@ import authorization from "../pages/Login/reducers"
 import pokemonsManager from "../pages/PokemonStore/reducers";
 import pokemonDetails from "../pages/PokemonDetails/reducers";
 import registration from "../pages/Register/reducers";
+import cart from "../pages/Cart/reducers";
+import order from "../pages/Profile/reducers";
 
 const authorizationBlackListedFields = createBlacklistFilter('authorization', [
   'isLoading',
@@ -18,6 +20,8 @@ const rootReducer = combineReducers({
   authorization,
   pokemonsManager,
   pokemonDetails,
+  cart,
+  order,
 });
 
 const persistConfig = {
