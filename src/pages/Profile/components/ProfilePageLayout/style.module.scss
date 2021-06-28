@@ -1,12 +1,29 @@
 @import '../../../../styles/vars';
 
+.profileTitle {
+  height: 1.3rem;
+  width: 50vw;
+
+  background: $blue;
+  border: 3px solid;
+  border-right-color: $border-color;
+  border-bottom: none $border-color;
+
+  margin: 0 auto;
+}
+
 .profileWrapper {
   color: $black;
-  max-width: 50%;
+  width: 50vw;
+  max-height: 82vh;
+
+  background: $silver;
   border: 3px solid $white;
   border-right-color: $border-color;
   border-bottom-color: $border-color;
-  background: $silver;
+  border-top: none;
+
+  overflow-y: auto;
 
   padding: 1.5rem 2rem;
   margin: 0 auto;
@@ -35,8 +52,9 @@
   flex-wrap: wrap;
 
   p {
+    font-size: 1.2rem;
     width: 50%;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
   }
 }
 

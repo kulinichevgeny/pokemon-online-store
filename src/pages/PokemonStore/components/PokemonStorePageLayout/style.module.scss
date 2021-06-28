@@ -1,14 +1,13 @@
 @import '../../../../styles/vars';
 
 .pokemonStoreWrapper {
-  position: relative;
   z-index: 1000;
+  padding: 0 6rem;
 }
 
 .pokemonList {
   display: flex;
   flex-wrap: wrap;
-  padding: 0 1rem;
 }
 
 .pokemonCard {
@@ -19,7 +18,7 @@
   border-bottom-color: $border-color;
   background: $silver;
 
-  margin: 1rem 1rem 0 1rem;
+  margin: 0.5rem;
 
   &Content {
     font-weight: 600;
@@ -55,16 +54,16 @@
 
 .paginationWrapper {
   position: fixed;
-  bottom: 0;
+  bottom: 4rem;
   right: 0;
   left: 0;
 
-  width: 290px;
-  height: 95px;
+  max-width: 20rem;
+  height: 6rem;
 
-  background-image: url('../../../../static/img/pagination.png');
+  background: url('../../../../static/img/pagination.png') center no-repeat;
 
-  margin: 0 auto 4rem;
+  margin: 0 auto;
 }
 
 .pagination {

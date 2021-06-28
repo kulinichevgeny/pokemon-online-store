@@ -8,27 +8,30 @@ const CartPageLayout = ({ isLoading, itemsList, totalPrice, handleDeleteCartItem
         { isLoading ? (
             <div className={styles.progressBar} />
         ) : (
-            <div className={styles.cartWrapper}>
-              <h2 className={styles.totalPrice}>Total Price: {totalPrice}</h2>
+            <div>
+              <div className={styles.cartTitle} />
+              <div className={styles.cartWrapper}>
+                <h2 className={styles.totalPrice}>Total Price: {totalPrice}</h2>
 
-              <div className={styles.pokemonInfoWrapper}>
-                {itemsList.map((item) => (
-                    <div key={item.id} className={styles.pokemonInfoContent}>
-                      <p className={styles.pokemonName}>{item.name}</p>
-                      <img src={item.image} alt=""/>
-                      <p>Amount: {item.quantity}</p>
-                      {/*<button onClick={() => handleAddPokemon(item.id)}>+</button>*/}
-                      <p className={styles.pokemonPrice}>Price: <strong>{item.price}</strong></p>
-                      <button className={styles.pokemonDelete} onClick={() => handleDeleteCartItem(item.id)}>Remove</button>
-                    </div>
-                ))}
+                <div className={styles.pokemonInfoWrapper}>
+                  {itemsList.map((item) => (
+                      <div className={styles.pokemonCard} key={item.id}>
+                        <h3 className={styles.pokemonName}>{item.name}</h3>
+                        <div className={styles.pokemonCardContent}>
+                          <img src={item.image} alt=""/>
+                          <p>Amount: {item.quantity}</p>
+                          {/*<button onClick={() => handleAddPokemon(item.id)}>+</button>*/}
+                          <p className={styles.pokemonPrice}>Price: <strong>{item.price}</strong></p>
+                          <button className={styles.pokemonDelete} onClick={() => handleDeleteCartItem(item.id)}>Remove</button>
+                        </div>
+                      </div>
+                  ))}
+                </div>
+
+                <div className={styles.createOrderWrapper}>
+                  <button className={styles.createOrderButton} onClick={handleCreateOrder}>Create Order</button>
+                </div>
               </div>
-
-
-              <div className={styles.createOrderWrapper}>
-                <button className={styles.createOrderButton} onClick={handleCreateOrder}>Create Order</button>
-              </div>
-
             </div>
             )}
 
