@@ -1,60 +1,33 @@
 @import '../../../../styles/vars';
 
-.authWrapper {
-  max-width: 831px;
-  margin: 1rem auto;
+.signUpWrapper {
+  background: url('../../../../static/img/signupBackground.png') center no-repeat;
+  background-size: contain;
+
+  padding: 8rem 0;
 }
 
-.registerColumn {
-  display: flex;
-}
-
-.loginForm {
-  position: absolute;
-  left: 0;
-  right: 0;
-
+.signUpForm {
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  margin: -33rem auto;
-
-  p {
-    color: $black;
-  }
 }
 
-.loginInput {
-  font-family: inherit !important;
-  border: 2px inset $white !important;
-  background-color: $silver !important;
+.signUpColumn {
+  display: flex;
+}
 
+.signUpInput {
+  border: 2px inset $white !important;
   margin: 1rem !important;
 }
 
-.loginButton {
-  width: 6rem !important;
-  border-width: 2px !important;
-  border-style: outset !important;
-  border-color: buttonface !important;
-  border-right-color: $border-color !important;
-  border-bottom-color: $border-color !important;
-  border-radius: 1px !important;
-  background: $silver !important;
+.signUpButton {
+  @include button;
+  max-width: 5.2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
 
-  transition: 0.1s ease !important;
-
-  padding: 0.3rem 0 0.2rem !important;
-  margin-top: 1rem !important;
-
-  &:hover {
-    border: 2px inset $white !important;
-    background: $silver !important;
-    color: $black !important;
-    box-shadow: -1px -1px $black !important;
-  }
-  &:active {
-    background: url("../../../../static/img/background.bmp") !important;
-  }
+  padding: 0.5rem 0;
+  margin-top: 2rem;
 }

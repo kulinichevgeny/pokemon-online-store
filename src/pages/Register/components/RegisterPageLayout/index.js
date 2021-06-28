@@ -1,25 +1,23 @@
-import { Box, Button, TextField } from "@material-ui/core";
+import { Box, TextField } from "@material-ui/core";
 import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
 import InputLabel from '@material-ui/core/InputLabel';
 
 import styles from "./style.module.scss";
-import paint from "../../../../static/img/signupBackground.png";
 
 const RegisterPageLayout = ({ registerValues, setRegisterValues, handleSubmit }) => {
   return (
       <Box>
         <h1>Sign Up</h1>
 
-        <Box className={styles.authWrapper}>
-          <img src={paint} alt=""/>
-          <form className={styles.loginForm} onSubmit={handleSubmit}>
-            <Box className={styles.registerColumn}>
+        <Box className={styles.signUpWrapper}>
+          <form className={styles.signUpForm} onSubmit={handleSubmit}>
+            <Box className={styles.signUpColumn}>
               <Box>
                 <Box>
                   <TextField
-                      className={styles.loginInput}
+                      className={styles.signUpInput}
                       name='email'
                       onChange={setRegisterValues}
                       placeholder='Email ∗'
@@ -29,7 +27,7 @@ const RegisterPageLayout = ({ registerValues, setRegisterValues, handleSubmit })
                 </Box>
                 <Box>
                   <TextField
-                      className={styles.loginInput}
+                      className={styles.signUpInput}
                       name='password'
                       onChange={setRegisterValues}
                       placeholder='Password ∗'
@@ -39,7 +37,7 @@ const RegisterPageLayout = ({ registerValues, setRegisterValues, handleSubmit })
                 </Box>
                 <Box>
                   <TextField
-                      className={styles.loginInput}
+                      className={styles.signUpInput}
                       name='confirmedPassword'
                       onChange={setRegisterValues}
                       placeholder='Confirm password ∗'
@@ -51,7 +49,7 @@ const RegisterPageLayout = ({ registerValues, setRegisterValues, handleSubmit })
               <Box>
                 <Box>
                   <TextField
-                      className={styles.loginInput}
+                      className={styles.signUpInput}
                       name='firstName'
                       onChange={setRegisterValues}
                       placeholder='First Name ∗'
@@ -61,7 +59,7 @@ const RegisterPageLayout = ({ registerValues, setRegisterValues, handleSubmit })
                 </Box>
                 <Box>
                   <TextField
-                      className={styles.loginInput}
+                      className={styles.signUpInput}
                       name='lastName'
                       onChange={setRegisterValues}
                       placeholder='Last Name ∗'
@@ -71,7 +69,7 @@ const RegisterPageLayout = ({ registerValues, setRegisterValues, handleSubmit })
                 </Box>
                 <Box>
                   <TextField
-                      className={styles.loginInput}
+                      className={styles.signUpInput}
                       name='phone'
                       onChange={setRegisterValues}
                       placeholder='Phone Number ∗'
@@ -89,12 +87,13 @@ const RegisterPageLayout = ({ registerValues, setRegisterValues, handleSubmit })
                   value={registerValues.gender}
                   onChange={setRegisterValues}
                   name={'gender'}
+                  title='Select your gender'
               >
                 <MenuItem value={'male'}>Male</MenuItem>
                 <MenuItem value={'female'}>Female</MenuItem>
               </Select>
             </FormControl>
-            <Button className={styles.loginButton} type='submit'>Sign Up</Button>
+            <button className={styles.signUpButton} type='submit'>Sign Up</button>
           </form>
         </Box>
       </Box>

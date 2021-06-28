@@ -1,23 +1,39 @@
 @import '../../../../styles/vars';
 
+.cartTitle {
+  height: 1.3rem;
+  width: 60vw;
+
+  background: $blue;
+  border: 3px solid;
+  border-right-color: $border-color;
+  border-bottom: none $border-color;
+
+  margin: 0 auto;
+}
+
 .cartWrapper {
   color: $black;
-  max-width: 60%;
+  width: 60vw;
+  max-height: 82vh;
+
+  background: $silver;
   border: 3px solid $white;
   border-right-color: $border-color;
   border-bottom-color: $border-color;
-  background: $silver;
+  border-top: none;
+
+  overflow-y: auto;
 
   padding: 1.5rem 2rem;
   margin: 0 auto;
 }
 
-
 .totalPrice {
   font-size: 2rem;
   text-align: center;
   font-weight: 600;
-  padding: 1rem 0 0 1rem;
+
   margin-bottom: 1.5rem;
 }
 
@@ -40,35 +56,49 @@
   margin-bottom: 2rem;
 }
 
-.pokemonInfoContent {
-  text-align: center;
-  border: 2px solid $white;
-  border-right-color: $border-color;
-  border-bottom-color: $border-color;
-
-  padding: 1rem 1rem 0.7rem;
-  margin: 0.5rem;
+.pokemonCard {
+  margin: 0.6rem 0.5rem;
 
   .pokemonName {
     font-size: 1.1rem;
     font-weight: 600;
     text-align: center;
     text-transform: capitalize;
-  }
-  .pokemonPrice {
-    margin: 0.3rem 0 0.8rem;
-  }
-  .pokemonDelete {
-    @include button;
-    max-width: 4.5rem;
-    padding: 0.2rem 0 0.1rem;
+
+    color: $white;
+    background: $blue;
+    border: 2px solid;
+    border-right-color: $border-color;
+    border-bottom: none $border-color;
+
+    padding: 0.2rem 0;
   }
 
-  img {
-    border: 2px inset $white;
-    border-radius: 1px;
+  .pokemonCardContent {
+    text-align: center;
 
-    margin: 0.5rem 0;
+    border: 2px solid $white;
+    border-right-color: $border-color;
+    border-bottom-color: $border-color;
+    border-top: none;
+
+    padding: 0 1rem 0.7rem;
+
+    .pokemonPrice {
+      margin: 0.3rem 0 0.8rem;
+    }
+    .pokemonDelete {
+      @include button;
+      max-width: 4.5rem;
+      padding: 0.2rem 0 0.1rem;
+    }
+
+    img {
+      border: 2px inset $white;
+      border-radius: 1px;
+
+      margin: 0.5rem 0;
+    }
   }
 }
 
