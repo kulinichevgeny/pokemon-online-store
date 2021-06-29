@@ -3,7 +3,7 @@ import React from "react";
 
 const PokemonDetailsPageLayout = ({ pokemonInfo, isLoading, handleAddItemToCart, abilities, stats }) => {
   return (
-      <div>
+      <div className={styles.detailsPage}>
         <h1>Pokemon Details Page</h1>
 
         { isLoading ? (

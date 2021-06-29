@@ -1,32 +1,20 @@
-@import '../../../../styles/vars';
+@import '../../../../styles/index';
+
+.cartTitle,
+.cartWrapper {
+  z-index: 1000;
+  position: relative;
+}
 
 .cartTitle {
-  height: 1.3rem;
+  @include folderHeader;
   width: 60vw;
-
-  background: $blue;
-  border: 3px solid;
-  border-right-color: $border-color;
-  border-bottom: none $border-color;
-
-  margin: 0 auto;
 }
 
 .cartWrapper {
-  color: $black;
+  @include folderWrapper;
   width: 60vw;
-  max-height: 82vh;
-
-  background: $silver;
-  border: 3px solid $white;
-  border-right-color: $border-color;
-  border-bottom-color: $border-color;
-  border-top: none;
-
-  overflow-y: auto;
-
   padding: 1.5rem 2rem;
-  margin: 0 auto;
 }
 
 .totalPrice {
@@ -44,9 +32,8 @@
     @include button;
     font-size: 1.2rem;
     font-weight: 600;
-    max-width: 8rem;
 
-    padding: 0.45rem  0.3rem;
+    padding: 0.5rem 1rem;
   }
 }
 
@@ -89,8 +76,8 @@
     }
     .pokemonDelete {
       @include button;
-      max-width: 4.5rem;
-      padding: 0.2rem 0 0.1rem;
+      font-weight: 700;
+      padding: 0.3rem 1rem 0.2rem;
     }
 
     img {

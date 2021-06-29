@@ -23,6 +23,8 @@ const RegisterPageLayout = ({ registerValues, setRegisterValues, handleSubmit })
                       placeholder='Email ∗'
                       type="email"
                       variant="filled"
+                      required={true}
+                      autoComplete="on"
                   />
                 </Box>
                 <Box>
@@ -33,6 +35,8 @@ const RegisterPageLayout = ({ registerValues, setRegisterValues, handleSubmit })
                       placeholder='Password ∗'
                       type="password"
                       variant="filled"
+                      required={true}
+                      autoComplete="password"
                   />
                 </Box>
                 <Box>
@@ -43,6 +47,8 @@ const RegisterPageLayout = ({ registerValues, setRegisterValues, handleSubmit })
                       placeholder='Confirm password ∗'
                       type="password"
                       variant="filled"
+                      required={true}
+                      autoComplete="on"
                   />
                 </Box>
               </Box>
@@ -55,6 +61,8 @@ const RegisterPageLayout = ({ registerValues, setRegisterValues, handleSubmit })
                       placeholder='First Name ∗'
                       type="text"
                       variant="filled"
+                      required={true}
+                      autoComplete="on"
                   />
                 </Box>
                 <Box>
@@ -65,6 +73,8 @@ const RegisterPageLayout = ({ registerValues, setRegisterValues, handleSubmit })
                       placeholder='Last Name ∗'
                       type="text"
                       variant="filled"
+                      required={true}
+                      autoComplete="on"
                   />
                 </Box>
                 <Box>
@@ -75,6 +85,8 @@ const RegisterPageLayout = ({ registerValues, setRegisterValues, handleSubmit })
                       placeholder='Phone Number ∗'
                       type="tel"
                       variant="filled"
+                      required={true}
+                      autoComplete="on"
                   />
                 </Box>
               </Box>

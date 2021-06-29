@@ -1,10 +1,14 @@
-@import '../../../../styles/vars';
+@import '../../../../styles/index';
 
 .signUpWrapper {
-  background: url('../../../../static/img/signupBackground.png') center no-repeat;
+  z-index: 1000;
+  position: relative;
+
+  background: url('../../../../static/img/authBackground.png') center no-repeat;
+  -webkit-background-size: contain;
   background-size: contain;
 
-  padding: 8rem 0;
+  padding: 10rem 0 5rem;
 }
 
 .signUpForm {
@@ -24,10 +28,9 @@
 
 .signUpButton {
   @include button;
-  max-width: 5.2rem;
   font-size: 1.1rem;
   font-weight: 600;
 
-  padding: 0.5rem 0;
+  padding: 0.5rem 1rem;
   margin-top: 2rem;
 }

@@ -1,8 +1,7 @@
 import React from "react";
-import { Box, Button, TextField } from "@material-ui/core";
+import { Box, TextField } from "@material-ui/core";
 
 import styles from "./style.module.scss";
-import browser from "../../../../static/img/authBackground.png";
 
 const LoginPageLayout = ({ setLoginValues, handleSubmit }) => {
   return (
@@ -10,7 +9,6 @@ const LoginPageLayout = ({ setLoginValues, handleSubmit }) => {
         <h1>Sign In</h1>
 
         <Box className={styles.authWrapper}>
-          <img className={styles.authBrowser} src={browser} alt=""/>
           <form className={styles.loginForm} onSubmit={handleSubmit}>
             <Box>
               <TextField
@@ -20,6 +18,8 @@ const LoginPageLayout = ({ setLoginValues, handleSubmit }) => {
                   placeholder='Email'
                   type="email"
                   variant="filled"
+                  required={true}
+                  autoComplete="on"
               />
             </Box>
             <Box>
@@ -30,9 +30,11 @@ const LoginPageLayout = ({ setLoginValues, handleSubmit }) => {
                   placeholder='Password'
                   type="password"
                   variant="filled"
+                  required={true}
+                  autoComplete="on"
               />
             </Box>
-            <Button className={styles.loginButton} type='submit'>Sign In</Button>
+            <button className={styles.loginButton} type='submit'>Sign In</button>
           </form>
         </Box>
       </Box>

@@ -1,19 +1,4 @@
-@import '../../../styles/vars';
-
-.clippy {
-  position: fixed;
-  bottom: 1rem;
-  right: 1rem;
-  width: 129px;
-  height: 117px;
-
-  cursor: pointer;
-  background: url('../../../static/img/clippy.png');
-
-  &:hover {
-    animation: shake 0.5s infinite;
-  }
-}
+@import '../../../styles/index';
 
 .navigationBar {
   display: flex;
@@ -66,4 +51,31 @@
   img {
     margin-bottom: 0.2rem;
   }
+}
+
+.clippy {
+  z-index: 1;
+
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  width: 129px;
+  height: 117px;
+
+  cursor: pointer;
+  background: url('../../../static/img/clippy.png');
+
+  &:hover {
+    animation: shake 0.5s infinite;
+  }
+}
+.paint {
+  z-index: 1;
+
+  position: absolute;
+  top: 4rem;
+  right: -15rem;
+  width: 681px;
+  height: 460px;
+  background: url('../../../static/img/paint.png');
 }

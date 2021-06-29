@@ -12,7 +12,7 @@ const ProfilePageContainer = () => {
 
   const handleGetOrder = useCallback(() => {
     dispatch(GET_ORDER_REQUEST())
-  }, [])
+  }, [dispatch])
 
   return <ProfilePageLayout
       handleGetOrder={handleGetOrder}
