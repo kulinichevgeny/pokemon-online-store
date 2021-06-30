@@ -75,11 +75,13 @@
 
     .pokemonQuantity {
       width: 40%;
+      font-weight: 600;
       border: 2px inset $white;
       padding: 0.2rem 0.2rem 0 0;
     }
 
     .pokemonPrice {
+      font-size: 1.1rem;
       margin: 1rem 0;
     }
 

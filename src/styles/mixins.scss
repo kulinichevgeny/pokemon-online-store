@@ -59,13 +59,15 @@
 
 // ========== folders styles ==========
 @mixin folderHeader {
-  height: 1.5rem;
+  height: 1.6rem;
+  text-indent: 2.6rem;
 
-  background: $blue;
+  background: $blue url("../static/img/icon.png") 5px -10px  no-repeat;
   border: 3px solid;
   border-right-color: $border-color;
   border-bottom: none;
 
+  padding-top: 0.3rem;
   margin: 0 auto;
 }
 @mixin folderWrapper {

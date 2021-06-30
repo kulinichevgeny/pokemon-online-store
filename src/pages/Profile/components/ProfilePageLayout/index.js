@@ -6,7 +6,7 @@ const ProfilePageLayout = ({ userInfo, handleGetOrder, orderHistory }) => {
   return (
       <div>
         <h1>Profile Page</h1>
-        <div className={styles.profileTitle} />
+        <div className={styles.profileTitle}>My Account</div>
         <div className={styles.profileWrapper}>
           <h2>Account Info</h2>
           <div className={styles.profileContent}>

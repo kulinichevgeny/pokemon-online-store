@@ -5,12 +5,15 @@ import { useHistory } from "react-router-dom";
 import PokemonStorePageLayout from "../components/PokemonStorePageLayout";
 import { GET_POKEMONS_REQUEST } from "../actions";
 import { ROUTES } from "../../../routes/routeNames";
+import { GET_CART_REQUEST } from "../../Cart/actions";
 
 const PokemonStorePageContainer = () => {
   const dispatch = useDispatch();
   const history = useHistory();
 
   const { pokemonsList, isLoading, pokemonPage } = useSelector(state => state.pokemonsManager);
+  const { isAuthorized } = useSelector(state => state.authorization);
+  const { itemsList } = useSelector(state => state.cart)
 
   const [currentPage, setCurrentPage] = useState(pokemonPage);
 
@@ -18,7 +21,12 @@ const PokemonStorePageContainer = () => {
     if (pokemonsList.length === 0 || pokemonPage !== currentPage)  {
       dispatch(GET_POKEMONS_REQUEST(currentPage));
     }
+
   }, [dispatch, currentPage, pokemonPage, pokemonsList.length]);
+
+  useEffect(() => {
+    if (isAuthorized && itemsList.length === 0) dispatch(GET_CART_REQUEST());
+  }, [dispatch])
 
   const handlePageChange = useCallback((data, page) => {
     setCurrentPage(page);
