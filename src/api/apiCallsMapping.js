@@ -26,6 +26,7 @@ const apiCallsMapping = (action) => {
     [cartActions.ADD_ITEM_REQUEST]: cartApi.addCartItem,
     [cartActions.DELETE_ITEM_REQUEST]: cartApi.deleteCartItem,
     [cartActions.CREATE_ORDER_REQUEST]: cartApi.createOrder,
+    [cartActions.UPDATE_QUANTITY_REQUEST]: cartApi.updateItemQuantity,
 
     [loginActions.SIGN_IN_REQUEST]: loginApi.signIn,
 

@@ -20,8 +20,7 @@
 
   &Pages {
     display: flex;
-    justify-content: space-between;
-    flex-basis: 666px;
+    justify-content: flex-start;
     width: 100%;
   }
 }
@@ -29,7 +28,9 @@
 .pageSwitchers {
   @include button;
   font-weight: 600;
+
   padding: 0.4rem 0.5rem;
+  margin-right: 0.2rem;
 }
 
 .foldersWrapper {
@@ -42,10 +43,7 @@
   .folder {
     cursor: default;
     text-align: center;
-    margin-bottom:2rem;
-  }
-  .folder:nth-child(3) {
-    cursor: not-allowed;
+    margin-bottom: 2rem;
   }
 
   img {
@@ -55,6 +53,12 @@
 
 .clippy {
   z-index: 1;
+
+  font-size: 0.9rem;
+  text-indent: 0.3rem;
+  line-height: 1.6rem;
+
+  color: $white;
 
   position: fixed;
   bottom: 1rem;

@@ -1,6 +1,9 @@
-import styles from "./style.module.scss";
+// import CircularProgress from '@material-ui/core/CircularProgress';
 
-const CartPageLayout = ({ isLoading, itemsList, totalPrice, handleDeleteCartItem, handleCreateOrder }) => {
+import styles from "./style.module.scss";
+import Counter from "../../../../commonComponents/Counter";
+
+const CartPageLayout = ({ isLoading, editPokemonId, itemsList, totalPrice, handleDeleteCartItem, handleCreateOrder, handleIncrement, handleDecrement, handleGoToDetails }) => {
   return (
       <div>
         <h1>Shopping Cart Page</h1>
@@ -18,10 +21,15 @@ const CartPageLayout = ({ isLoading, itemsList, totalPrice, handleDeleteCartItem
                       <div className={styles.pokemonCard} key={item.id}>
                         <h3 className={styles.pokemonName}>{item.name}</h3>
                         <div className={styles.pokemonCardContent}>
-                          <img src={item.image} alt=""/>
-                          <p>Amount: {item.quantity}</p>
-                          {/*<button onClick={() => handleAddPokemon(item.id)}>+</button>*/}
-                          <p className={styles.pokemonPrice}>Price: <strong>{item.price}</strong></p>
+                          <img src={item.image} onClick={() => handleGoToDetails(item.id)} alt=""/>
+                          {/*{ editPokemonId === item.id && (<CircularProgress className={styles.cardLoading}/>)}*/}
+                          <Counter
+                              handleIncrement={() => handleIncrement(item)}
+                              handleDecrement={() => handleDecrement(item)}
+                          >
+                            <p className={styles.pokemonQuantity} >{item.quantity}</p>
+                            </Counter>
+                          <p className={styles.pokemonPrice}>Price: <strong>{item.price * item.quantity}</strong></p>
                           <button className={styles.pokemonDelete} onClick={() => handleDeleteCartItem(item.id)}>Remove</button>
                         </div>
                       </div>

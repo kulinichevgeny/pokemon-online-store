@@ -5,7 +5,6 @@
   position: relative;
 
   background: url('../../../../static/img/authBackground.png') center no-repeat;
-  -webkit-background-size: contain;
   background-size: contain;
 
   padding: 10rem 0 5rem;
@@ -29,8 +28,10 @@
 .signUpButton {
   @include button;
   font-size: 1.1rem;
-  font-weight: 600;
 
-  padding: 0.5rem 1rem;
+  color: $white;
+  background-color: $green;
+
+  padding: 0.6rem 1rem 0.5rem;
   margin-top: 2rem;
 }

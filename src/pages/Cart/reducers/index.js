@@ -7,6 +7,7 @@ const defaultState = {
   quantity: 0,
   itemsList: [],
   isLoading: false,
+  editPokemonId: null,
   errors: null,
 };
 
@@ -97,6 +98,39 @@ const cart = handleActions({
   [actions.CREATE_ORDER_FAIL]: (state, {payload}) => ({
     ...state,
     isLoading: false,
+    errors: payload,
+  }),
+
+  // ============ UPDATE QUANTITY ============
+  [actions.UPDATE_QUANTITY_REQUEST]: (state, {payload}) => ({
+    ...state,
+    editPokemonId: payload.id,
+  }),
+  [actions.UPDATE_QUANTITY_SUCCESS]: (state, {payload}) => {
+    const { cartState, updatedItem } = payload.response;
+
+    const itemsListCopy = [...state.itemsList];
+
+    const itemToUpdate = itemsListCopy.find(item => {
+      return updatedItem.id === item.id;
+    })
+
+    itemToUpdate.quantity =  updatedItem.quantity;
+
+    return {
+      ...state,
+      editPokemonId: null,
+      itemsList: itemsListCopy,
+      isCardLoading: false,
+      totalPrice: cartState.totalPrice,
+      quantity: cartState.quantity,
+    }
+  },
+  [actions.UPDATE_QUANTITY_FAIL]: (state, {payload}) => ({
+    ...state,
+    editPokemonId: null,
+
+    isCardLoading: false,
     errors: payload,
   }),
 }, defaultState);

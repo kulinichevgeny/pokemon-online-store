@@ -31,10 +31,7 @@
   z-index: 1000;
   color: $black;
 
-  border: 2px solid $white;
-  border-right-color: $border-color;
-  border-bottom-color: $border-color;
-  background: $silver;
+  border: 2px inset $white;
 
   margin: 0.8rem;
 
@@ -46,7 +43,7 @@
   &Title {
     color: $white;
     text-transform: capitalize;
-    background: $blue;
+    background: $border-color;
 
     padding: 0.3rem;
   }
@@ -64,8 +61,10 @@
 
   &Button {
     @include button;
-    font-weight: 700;
     width: 100%;
+
+    color: $white;
+    background-color: $yellow;
 
     padding: 0.4rem 0 0.3rem;
     margin: 1rem 0 0;

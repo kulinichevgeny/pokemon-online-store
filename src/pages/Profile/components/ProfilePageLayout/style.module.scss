@@ -28,8 +28,10 @@
 
     button {
       @include button;
-      font-weight: 700;
-      padding: 0.4rem 1rem 0.3rem;
+      font-size: 1.1rem;
+      color: $white;
+      background-color: $yellow;
+      padding: 0.4rem 0.8rem 0.3rem;
     }
   }
 }
@@ -42,6 +44,13 @@
     font-size: 1.2rem;
     width: 50%;
     margin-bottom: 1.5rem;
+  }
+  span {
+    font-size: 1.2rem;
+    border: 2px inset $white;
+
+    padding: 0.5rem;
+    margin-top: 1.5rem;
   }
 }
 

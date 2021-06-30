@@ -14,6 +14,7 @@ const ProfilePageLayout = ({ userInfo, handleGetOrder, orderHistory }) => {
             <p>Last Name: <strong>{userInfo.lastName}</strong></p>
             <p>Email: <strong>{userInfo.email}</strong></p>
             <p>Phone Number: <strong>{userInfo.phone}</strong></p>
+            <span>Press <strong>Ctrl + Q</strong> to Sign Out</span>
           </div>
           <div className={styles.checkOrderHistory}>
             <button onClick={handleGetOrder}>Order History</button>

@@ -15,3 +15,7 @@ export const DELETE_ITEM_FAIL = createAction('DELETE_ITEM_FAIL');
 export const CREATE_ORDER_REQUEST = createAction('CREATE_ORDER_REQUEST');
 export const CREATE_ORDER_SUCCESS = createAction('CREATE_ORDER_SUCCESS');
 export const CREATE_ORDER_FAIL = createAction('CREATE_ORDER_FAIL');
+
+export const UPDATE_QUANTITY_REQUEST = createAction('UPDATE_QUANTITY_REQUEST');
+export const UPDATE_QUANTITY_SUCCESS = createAction('UPDATE_QUANTITY_SUCCESS');
+export const UPDATE_QUANTITY_FAIL = createAction('UPDATE_QUANTITY_FAIL');

@@ -101,7 +101,9 @@
   &Button {
     @include button;
     font-size: 1.2rem;
-    font-weight: 600;
+
+    color: $white;
+    background-color: $green;
 
     margin-top: 1rem;
     padding: 0.5rem 1rem;
