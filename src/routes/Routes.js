@@ -13,34 +13,34 @@ import ProfilePageContainer from "../pages/Profile/containers/ProfilePageContain
 const Routes = () => {
   return (
       <Switch>
-        <PrivateRoute exact
-                      path={ROUTES.HOME_PAGE}
-                      component={HomePageContainer}
-        />
-        <Route exact
-               path={ROUTES.SIGN_UP}
-               component={RegisterPageContainer}
-        />
-        <Route exact
-               path={ROUTES.SIGN_IN}
-               component={LoginPageContainer}
-        />
-        <PrivateRoute exact
-                      path={ROUTES.POKEMON_STORE}
-                      component={PokemonStorePageContainer}
-        />
-        <PrivateRoute exact
-                      path={ROUTES.POKEMON_DETAILS}
-                      component={PokemonDetailsPageContainer}
-        />
-        <PrivateRoute exact
-                      path={ROUTES.CART}
-                      component={CartPageContainer}
-        />
-        <PrivateRoute exact
-                      path={ROUTES.PROFILE}
-                      component={ProfilePageContainer}
-        />
+            <PrivateRoute exact
+                          path={ROUTES.HOME_PAGE}
+                          component={HomePageContainer}
+            />
+            <Route exact
+                   path={ROUTES.SIGN_UP}
+                   component={RegisterPageContainer}
+            />
+            <Route exact
+                   path={ROUTES.SIGN_IN}
+                   component={LoginPageContainer}
+            />
+            <PrivateRoute exact
+                          path={ROUTES.POKEMON_STORE}
+                          component={PokemonStorePageContainer}
+            />
+            <PrivateRoute exact
+                          path={ROUTES.POKEMON_DETAILS}
+                          component={PokemonDetailsPageContainer}
+            />
+            <PrivateRoute exact
+                          path={ROUTES.CART}
+                          component={CartPageContainer}
+            />
+            <PrivateRoute exact
+                          path={ROUTES.PROFILE}
+                          component={ProfilePageContainer}
+            />
       </Switch>
   )
 };

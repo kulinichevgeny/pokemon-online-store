@@ -3,7 +3,7 @@ import React from "react";
 
 const PokemonDetailsPageLayout = ({ pokemonInfo, isLoading, handleAddItemToCart, abilities, stats }) => {
   return (
-      <div>
+      <div className={styles.detailsPage}>
         <h1>Pokemon Details Page</h1>
 
         { isLoading ? (
@@ -30,7 +30,7 @@ const PokemonDetailsPageLayout = ({ pokemonInfo, isLoading, handleAddItemToCart,
                 <h3 className={styles.abilitiesTitle}>Abilities:</h3>
                 <div className={styles.abilitiesWrapper}>
                   {abilities?.map((ability) => (
-                      <div key={ability.id} className={styles.abilitiesContent}>
+                      <div key={ability.title} className={styles.abilitiesContent}>
                         <p className={styles.abilityTitle}><strong>{ability.title}</strong></p>
                         <p className={styles.abilityDescription}>{ability.description}</p>
                       </div>

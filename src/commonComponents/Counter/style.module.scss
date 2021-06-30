@@ -1,0 +1,16 @@
+@import '../../styles/index';
+
+.counterWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  button {
+    @include button;
+    line-height: 1rem;
+    color: $white;
+    background-color: $yellow;
+
+    padding: 0.2rem 0.1rem 0;
+  }
+}

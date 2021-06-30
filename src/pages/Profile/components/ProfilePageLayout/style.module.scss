@@ -1,33 +1,21 @@
-@import '../../../../styles/vars';
+@import '../../../../styles/index';
+
+.profileTitle,
+.profileWrapper {
+  z-index: 1000;
+  position: relative;
+}
 
 .profileTitle {
-  height: 1.3rem;
+  @include folderHeader;
   width: 50vw;
-
-  background: $blue;
-  border: 3px solid;
-  border-right-color: $border-color;
-  border-bottom: none $border-color;
-
-  margin: 0 auto;
 }
 
 .profileWrapper {
-  color: $black;
+  @include folderWrapper;
   width: 50vw;
-  max-height: 82vh;
-
-  background: $silver;
-  border: 3px solid $white;
-  border-right-color: $border-color;
-  border-bottom-color: $border-color;
-  border-top: none;
-
-  overflow-y: auto;
-
   padding: 1.5rem 2rem;
-  margin: 0 auto;
-  
+
   & > h2 {
     font-size: 1.8rem;
     text-align: center;
@@ -40,11 +28,12 @@
 
     button {
       @include button;
-      max-width: 6.5rem;
-      padding: 0.4rem 0 0.3rem;
+      font-size: 1.1rem;
+      color: $white;
+      background-color: $yellow;
+      padding: 0.4rem 0.8rem 0.3rem;
     }
   }
-
 }
 
 .profileContent {
@@ -55,6 +44,13 @@
     font-size: 1.2rem;
     width: 50%;
     margin-bottom: 1.5rem;
+  }
+  span {
+    font-size: 1.2rem;
+    border: 2px inset $white;
+
+    padding: 0.5rem;
+    margin-top: 1.5rem;
   }
 }
 

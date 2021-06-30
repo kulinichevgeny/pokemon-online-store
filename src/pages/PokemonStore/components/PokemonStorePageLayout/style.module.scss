@@ -1,8 +1,25 @@
-@import '../../../../styles/vars';
+@import '../../../../styles/index';
 
 .pokemonStoreWrapper {
-  z-index: 1000;
   padding: 0 6rem;
+  border: 2px solid yellow;
+}
+
+.pokemonTitle,
+.pokemonWrapper {
+  z-index: 1000;
+  position: relative;
+}
+
+.pokemonTitle {
+  @include folderHeader;
+  max-width: 84vw;
+}
+
+.pokemonWrapper {
+  @include folderWrapper;
+  max-width: 84vw;
+  padding: 0.5rem 1rem 1rem;
 }
 
 .pokemonList {
@@ -11,14 +28,12 @@
 }
 
 .pokemonCard {
+  z-index: 1000;
   color: $black;
 
-  border: 2px solid $white;
-  border-right-color: $border-color;
-  border-bottom-color: $border-color;
-  background: $silver;
+  border: 2px inset $white;
 
-  margin: 0.5rem;
+  margin: 0.8rem;
 
   &Content {
     font-weight: 600;
@@ -28,7 +43,7 @@
   &Title {
     color: $white;
     text-transform: capitalize;
-    background: $blue;
+    background: $border-color;
 
     padding: 0.3rem;
   }
@@ -46,30 +61,26 @@
 
   &Button {
     @include button;
+    width: 100%;
 
-    padding: 0.3rem 0 0.2rem;
-    margin-top: 1rem;
+    color: $white;
+    background-color: $yellow;
+
+    padding: 0.4rem 0 0.3rem;
+    margin: 1rem 0 0;
   }
 }
 
 .paginationWrapper {
-  position: fixed;
-  bottom: 4rem;
-  right: 0;
-  left: 0;
-
-  max-width: 20rem;
-  height: 6rem;
-
-  background: url('../../../../static/img/pagination.png') center no-repeat;
-
-  margin: 0 auto;
+  text-align: center;
 }
-
 .pagination {
-  max-width: 268px;
-  padding-top: 2.4rem;
-  margin: 0 auto;
+  z-index: 1000;
+  display: inline-block;
+
+  border: 2px inset $white;
+  padding: 0.7rem;
+  margin: 1rem auto 0;
 }
 
 .progressBar {

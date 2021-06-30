@@ -42,7 +42,7 @@ const RegisterPageContainer = () => {
 
       history.push(ROUTES.SIGN_IN);
     }
-  }, [success, history]);
+  }, [success, history, message]);
 
   return <RegisterPageLayout
       loginValues={registerValues}

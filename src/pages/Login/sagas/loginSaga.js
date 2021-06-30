@@ -26,7 +26,7 @@ export function* loginSuccessSaga(action) {
   }
 }
 
-export function* loginFailSaga(action) {
+export function loginFailSaga(action) {
    const { response } = action.payload;
 
    alert(response);

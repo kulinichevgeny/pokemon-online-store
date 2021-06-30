@@ -1,32 +1,20 @@
-@import '../../../../styles/vars';
+@import '../../../../styles/index';
+
+.cartTitle,
+.cartWrapper {
+  z-index: 1000;
+  position: relative;
+}
 
 .cartTitle {
-  height: 1.3rem;
+  @include folderHeader;
   width: 60vw;
-
-  background: $blue;
-  border: 3px solid;
-  border-right-color: $border-color;
-  border-bottom: none $border-color;
-
-  margin: 0 auto;
 }
 
 .cartWrapper {
-  color: $black;
+  @include folderWrapper;
   width: 60vw;
-  max-height: 82vh;
-
-  background: $silver;
-  border: 3px solid $white;
-  border-right-color: $border-color;
-  border-bottom-color: $border-color;
-  border-top: none;
-
-  overflow-y: auto;
-
   padding: 1.5rem 2rem;
-  margin: 0 auto;
 }
 
 .totalPrice {
@@ -43,10 +31,12 @@
   .createOrderButton {
     @include button;
     font-size: 1.2rem;
-    font-weight: 600;
-    max-width: 8rem;
+    font-weight: 400;
 
-    padding: 0.45rem  0.3rem;
+    color: $white;
+    background-color: $green;
+
+    padding: 0.5rem 1rem;
   }
 }
 
@@ -66,36 +56,46 @@
     text-transform: capitalize;
 
     color: $white;
-    background: $blue;
-    border: 2px solid;
-    border-right-color: $border-color;
-    border-bottom: none $border-color;
+    background: $border-color;
+    border: 2px inset $white;
+    border-bottom: none;
 
-    padding: 0.2rem 0;
+    padding: 0.3rem 0 0.2rem;
   }
 
   .pokemonCardContent {
+    position: relative;
     text-align: center;
 
-    border: 2px solid $white;
-    border-right-color: $border-color;
-    border-bottom-color: $border-color;
+    line-height: 1.5rem;
+    border: 2px inset $white;
     border-top: none;
 
     padding: 0 1rem 0.7rem;
 
-    .pokemonPrice {
-      margin: 0.3rem 0 0.8rem;
+    .pokemonQuantity {
+      width: 40%;
+      border: 2px inset $white;
+      padding: 0.2rem 0.2rem 0 0;
     }
+
+    .pokemonPrice {
+      margin: 1rem 0;
+    }
+
     .pokemonDelete {
       @include button;
-      max-width: 4.5rem;
-      padding: 0.2rem 0 0.1rem;
+      color: $white;
+      background-color: $red;
+      font-weight: 400;
+      padding: 0.4rem 0.8rem 0.2rem;
     }
 
     img {
       border: 2px inset $white;
       border-radius: 1px;
+
+      cursor: pointer;
 
       margin: 0.5rem 0;
     }
@@ -104,4 +104,14 @@
 
 .progressBar {
   @include progressBar;
+}
+
+.cardLoading {
+  position: absolute;
+  top: 6.2rem;
+  left: 2.7rem;
+}
+
+.cardLoaded {
+  display: none;
 }

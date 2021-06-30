@@ -1,32 +1,19 @@
-@import '../../../../styles/vars';
+@import '../../../../styles/index';
 
+.detailsPage {
+  z-index: 1000;
+  position: relative;
+}
 .pokemonDetailsTitle {
-  height: 1.3rem;
+  @include folderHeader;
   max-width: 50vw;
-
-  background: $blue;
-  border: 3px solid;
-  border-right-color: $border-color;
-  border-bottom: none $border-color;
-
-  margin: 0 auto;
 }
 
 .pokemonDetailsWrapper {
+  @include folderWrapper;
   max-width: 50vw;
-  max-height: 82vh;
-  color: $black;
-
-  background: $silver;
-  border: 3px solid $white;
-  border-right-color: $border-color;
-  border-bottom-color: $border-color;
-  border-top: none;
-
-  overflow-y: auto;
 
   padding: 1rem 2rem;
-  margin: 0 auto;
 
   .pokemonDetailsPreview {
     font-size: 2rem;
@@ -114,10 +101,11 @@
   &Button {
     @include button;
     font-size: 1.2rem;
-    font-weight: 600;
-    max-width: 7rem;
 
-    margin-top: 0.7rem;
-    padding: 0.45rem  0.3rem;
+    color: $white;
+    background-color: $green;
+
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
   }
 }
