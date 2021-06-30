@@ -1,11 +1,14 @@
 import { useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import HomePageLayout from "../components/HomePageLayout";
 import { SIGN_OUT } from "../../Login/actions";
+import { GET_CART_REQUEST } from "../../Cart/actions";
 
 const HomePageContainer = () => {
   const dispatch = useDispatch();
+
+  const { itemsList } = useSelector(state => state.cart)
 
   // Ctrl + Q = LOGOUT
   useEffect(() => {
@@ -19,6 +22,10 @@ const HomePageContainer = () => {
       document.removeEventListener('keypress', onKeyPress);
     }
   }, [dispatch]);
+
+  useEffect(() => {
+    if (itemsList.length === 0) dispatch(GET_CART_REQUEST());
+  }, [dispatch])
 
   return <HomePageLayout />;
 };

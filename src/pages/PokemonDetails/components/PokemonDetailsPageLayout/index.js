@@ -1,5 +1,7 @@
+import { Link } from "react-router-dom";
+
 import styles from "./style.module.scss";
-import React from "react";
+import { ROUTES } from "../../../../routes/routeNames";
 
 const PokemonDetailsPageLayout = ({ pokemonInfo, isLoading, handleAddItemToCart, abilities, stats }) => {
   return (
@@ -10,8 +12,11 @@ const PokemonDetailsPageLayout = ({ pokemonInfo, isLoading, handleAddItemToCart,
             <div className={styles.progressBar}/>
         ) : (
             <div>
-              <div className={styles.pokemonDetailsTitle} />
+              <div className={styles.pokemonDetailsTitle}>Detail Info</div>
               <div className={styles.pokemonDetailsWrapper}>
+                <Link to={ROUTES.POKEMON_STORE}>
+                  <button className={styles.returnButton}>🡠 BACK <br/></button>
+                </Link>
                 <div className={styles.pokemonDetailsPreview}>
                   <h2>{pokemonInfo.name}</h2>
                   <img src={pokemonInfo.image} alt={pokemonInfo.name}/>

@@ -12,9 +12,9 @@ const CartPageLayout = ({ isLoading, editPokemonId, itemsList, totalPrice, handl
             <div className={styles.progressBar} />
         ) : (
             <div>
-              <div className={styles.cartTitle} />
+              <div className={styles.cartTitle}>Shopping Cart</div>
               <div className={styles.cartWrapper}>
-                <h2 className={styles.totalPrice}>Total Price: {totalPrice}</h2>
+                <h2 className={styles.totalPrice}>Total Price: {totalPrice} coins</h2>
 
                 <div className={styles.pokemonInfoWrapper}>
                   {itemsList.map((item) => (

@@ -11,6 +11,7 @@
 
 .pokemonDetailsWrapper {
   @include folderWrapper;
+  position: relative;
   max-width: 50vw;
 
   padding: 1rem 2rem;
@@ -26,6 +27,18 @@
       margin-top: 1rem;
     }
   }
+}
+
+.returnButton {
+  @include button;
+  position: absolute;
+  top: 0.7rem;
+  left: 2rem;
+
+  font-size: 1rem;
+  font-weight: 600;
+
+  padding: 0.2rem 0.4rem 0.2rem;
 }
 
 .statsTitle,
