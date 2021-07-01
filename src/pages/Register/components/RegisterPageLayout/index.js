@@ -2,7 +2,6 @@ import { Box, TextField } from "@material-ui/core";
 import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
-import InputLabel from '@material-ui/core/InputLabel';
 
 import styles from "./style.module.scss";
 
@@ -11,25 +10,25 @@ const RegisterPageLayout = ({ registerValues, setRegisterValues, handleSubmit })
       <Box>
         <h1>Sign Up</h1>
 
-        <Box className={styles.signUpWrapper}>
-          <form className={styles.signUpForm} onSubmit={handleSubmit}>
-            <Box className={styles.signUpColumn}>
+        <Box className={styles.signUpFolderWrapper}>
+          <form className={styles.signUpFolderForm} onSubmit={handleSubmit}>
+            <Box className={styles.signUpFormColumn}>
               <Box>
+                  <Box>
+                    <TextField
+                        className={styles.signUpFormInput}
+                        name='email'
+                        onChange={setRegisterValues}
+                        placeholder='Email ∗'
+                        type="email"
+                        variant="filled"
+                        required={true}
+                        autoComplete="on"
+                    />
+                  </Box>
                 <Box>
                   <TextField
-                      className={styles.signUpInput}
-                      name='email'
-                      onChange={setRegisterValues}
-                      placeholder='Email ∗'
-                      type="email"
-                      variant="filled"
-                      required={true}
-                      autoComplete="on"
-                  />
-                </Box>
-                <Box>
-                  <TextField
-                      className={styles.signUpInput}
+                      className={styles.signUpFormInput}
                       name='password'
                       onChange={setRegisterValues}
                       placeholder='Password ∗'
@@ -41,7 +40,7 @@ const RegisterPageLayout = ({ registerValues, setRegisterValues, handleSubmit })
                 </Box>
                 <Box>
                   <TextField
-                      className={styles.signUpInput}
+                      className={styles.signUpFormInput}
                       name='confirmedPassword'
                       onChange={setRegisterValues}
                       placeholder='Confirm password ∗'
@@ -55,7 +54,7 @@ const RegisterPageLayout = ({ registerValues, setRegisterValues, handleSubmit })
               <Box>
                 <Box>
                   <TextField
-                      className={styles.signUpInput}
+                      className={styles.signUpFormInput}
                       name='firstName'
                       onChange={setRegisterValues}
                       placeholder='First Name ∗'
@@ -67,7 +66,7 @@ const RegisterPageLayout = ({ registerValues, setRegisterValues, handleSubmit })
                 </Box>
                 <Box>
                   <TextField
-                      className={styles.signUpInput}
+                      className={styles.signUpFormInput}
                       name='lastName'
                       onChange={setRegisterValues}
                       placeholder='Last Name ∗'
@@ -79,7 +78,7 @@ const RegisterPageLayout = ({ registerValues, setRegisterValues, handleSubmit })
                 </Box>
                 <Box>
                   <TextField
-                      className={styles.signUpInput}
+                      className={styles.signUpFormInput}
                       name='phone'
                       onChange={setRegisterValues}
                       placeholder='Phone Number ∗'
@@ -92,8 +91,8 @@ const RegisterPageLayout = ({ registerValues, setRegisterValues, handleSubmit })
               </Box>
             </Box>
             <FormControl>
-              <InputLabel id="demo-simple-select-label" />
               <Select
+                  className={styles.signUpFormSelect}
                   labelId="demo-simple-select-label"
                   id="demo-simple-select"
                   value={registerValues.gender}
@@ -105,7 +104,7 @@ const RegisterPageLayout = ({ registerValues, setRegisterValues, handleSubmit })
                 <MenuItem value={'female'}>Female</MenuItem>
               </Select>
             </FormControl>
-            <button className={styles.signUpButton} type='submit'>Sign Up</button>
+            <button className={styles.signUpFormButton} type='submit'>Sign Up</button>
           </form>
         </Box>
       </Box>

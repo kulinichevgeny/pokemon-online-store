@@ -1,64 +1,57 @@
 @import '../../../../styles/index';
 
-.pokemonStoreWrapper {
-  padding: 0 6rem;
-  border: 2px solid yellow;
+.progressBar {
+  @include progressBar;
 }
 
-.pokemonTitle,
-.pokemonWrapper {
+.storeFolderTitle,
+.storeFolderWrapper {
   z-index: 1000;
   position: relative;
+  max-width: 84vw;
 }
-
-.pokemonTitle {
+.storeFolderTitle {
   @include folderHeader;
-  max-width: 84vw;
-}
+  font-weight: 400;
 
-.pokemonWrapper {
+}
+.storeFolderWrapper {
   @include folderWrapper;
-  max-width: 84vw;
   padding: 0.5rem 1rem 1rem;
 }
 
-.pokemonList {
+.storeFolderPokemonList {
   display: flex;
   flex-wrap: wrap;
 }
 
 .pokemonCard {
-  z-index: 1000;
   color: $black;
-
-  border: 2px inset $white;
-
+  @include borderInset;
   margin: 0.8rem;
-
-  &Content {
-    padding: 0.4rem 0.8rem;
-  }
 
   &Title {
     color: $white;
-    font-weight: 500;
+    font-weight: 600;
     text-transform: capitalize;
 
     cursor: pointer;
     background: $border-color;
 
-    padding: 0.3rem;
+    padding: 0.4rem 0.4rem 0.3rem;
+  }
+
+  &Content {
+    padding: 0.6rem 0.8rem 0.6rem;
   }
 
   &Photo {
-    border: 2px inset $white;
-    border-radius: 1px;
+    @include borderInset;
     margin-bottom: 1rem;
 
     img {
       display: block;
       cursor: pointer;
-      margin: 0 auto;
     }
   }
 
@@ -69,25 +62,20 @@
     color: $white;
     background-color: $yellow;
 
-    padding: 0.4rem 0 0.3rem;
-    margin: 1rem 0 0;
+    padding: 0.35rem 0 0.3rem;
+    margin: 1rem auto 0;
   }
 }
 
 .paginationWrapper {
   text-align: center;
-}
-.pagination {
-  z-index: 1000;
-  display: inline-block;
 
-  border: 2px solid $white;
-  border-right-color: $border-color;
-  border-bottom-color: $border-color;
-  padding: 0.7rem;
-  margin: 1rem auto 0;
-}
+  .pagination {
+    display: inline-block;
 
-.progressBar {
-  @include progressBar;
+    @include borderOutset(2px);
+
+    padding: 0.7rem;
+    margin: 1rem auto 0;
+  }
 }

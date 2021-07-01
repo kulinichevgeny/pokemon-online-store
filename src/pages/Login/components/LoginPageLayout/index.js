@@ -1,4 +1,3 @@
-import React from "react";
 import { Box, TextField } from "@material-ui/core";
 
 import styles from "./style.module.scss";
@@ -8,11 +7,11 @@ const LoginPageLayout = ({ setLoginValues, handleSubmit }) => {
       <Box>
         <h1>Sign In</h1>
 
-        <Box className={styles.authWrapper}>
-          <form className={styles.loginForm} onSubmit={handleSubmit}>
+        <Box className={styles.signInFolderWrapper}>
+          <form className={styles.signInFolderForm} onSubmit={handleSubmit}>
             <Box>
               <TextField
-                  className={styles.loginInput}
+                  className={styles.signInFormInput}
                   name='email'
                   onChange={setLoginValues}
                   placeholder='Email'
@@ -24,7 +23,7 @@ const LoginPageLayout = ({ setLoginValues, handleSubmit }) => {
             </Box>
             <Box>
               <TextField
-                  className={styles.loginInput}
+                  className={styles.signInFormInput}
                   name='password'
                   onChange={setLoginValues}
                   placeholder='Password'
@@ -37,6 +36,7 @@ const LoginPageLayout = ({ setLoginValues, handleSubmit }) => {
             <button className={styles.loginButton} type='submit'>Sign In</button>
           </form>
         </Box>
+
       </Box>
   );
 };

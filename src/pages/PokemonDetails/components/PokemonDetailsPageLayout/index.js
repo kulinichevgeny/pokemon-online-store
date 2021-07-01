@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
 
-import styles from "./style.module.scss";
 import { ROUTES } from "../../../../routes/routeNames";
+import styles from "./style.module.scss";
 
 const PokemonDetailsPageLayout = ({ pokemonInfo, isLoading, handleAddItemToCart, abilities, stats }) => {
   return (
-      <div className={styles.detailsPage}>
+      <div>
         <h1>Pokemon Details Page</h1>
 
         { isLoading ? (
@@ -15,13 +15,14 @@ const PokemonDetailsPageLayout = ({ pokemonInfo, isLoading, handleAddItemToCart,
               <div className={styles.pokemonDetailsTitle}>Detail Info</div>
               <div className={styles.pokemonDetailsWrapper}>
                 <Link to={ROUTES.POKEMON_STORE}>
-                  <button className={styles.returnButton}>🡠 BACK <br/></button>
+                  <button className={styles.pokemonDetailsReturnButton}>⮨ Store</button>
                 </Link>
                 <div className={styles.pokemonDetailsPreview}>
                   <h2>{pokemonInfo.name}</h2>
                   <img src={pokemonInfo.image} alt={pokemonInfo.name}/>
                 </div>
 
+                {/* Stats Section */}
                 <h3 className={styles.statsTitle}>Stats:</h3>
                 <div className={styles.statsWrapper}>
                   {stats?.map((stat) => (
@@ -32,6 +33,7 @@ const PokemonDetailsPageLayout = ({ pokemonInfo, isLoading, handleAddItemToCart,
                   ))}
                 </div>
 
+                {/* Abilities Section */}
                 <h3 className={styles.abilitiesTitle}>Abilities:</h3>
                 <div className={styles.abilitiesWrapper}>
                   {abilities?.map((ability) => (
