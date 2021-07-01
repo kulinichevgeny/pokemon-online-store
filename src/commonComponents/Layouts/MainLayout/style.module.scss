@@ -1,6 +1,7 @@
 @import '../../../styles/index';
 
 .desktopFoldersWrapper {
+  z-index: 2000;
   position: absolute;
   top: 2.5rem;
   left: 0.3rem;
