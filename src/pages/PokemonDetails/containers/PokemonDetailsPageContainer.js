@@ -33,7 +33,7 @@ const PokemonDetailsPageContainer = () => {
 
   useEffect(() => {
     if (itemsList.length === 0) dispatch(GET_CART_REQUEST());
-  }, [dispatch])
+  }, [dispatch, itemsList.length])
 
   return <PokemonDetailsPageLayout
       pokemonInfo={pokemonInfo}

@@ -1,7 +1,7 @@
 import { Link, useHistory } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useCallback } from "react";
-import useSound from "use-sound";
+import  useSound from "use-sound";
 
 import { ROUTES } from "../../../routes/routeNames";
 import { Box } from "@material-ui/core";
@@ -13,7 +13,7 @@ import folder from "../../../static/img/folder.png";
 import spotify from "../../../static/img/spotify.png";
 import trash from "../../../static/img/trash.png";
 import emptyTrash from "../../../static/img/emptyTrash.png";
-import sound from "../../../static/win_95_error.mp3";
+import sound from "../../../static/directed.mp3";
 
 const MainLayout = ({ children }) => {
   const history = useHistory();
@@ -24,7 +24,7 @@ const MainLayout = ({ children }) => {
   const StartButton = () => {
     const [play] = useSound(
         sound,
-        {volume: 0.1}
+        {volume: 0.5}
     );
 
     return <button className={styles.navBarStartButton} onClick={play}>Start</button>;
@@ -38,7 +38,7 @@ const MainLayout = ({ children }) => {
       <div>
 
         {/* Desktop Background Folders */}
-        <Box className={styles.desktopFoldersWrapper} >
+        <Box className={styles.desktopFoldersWrapper}>
           <Box className={styles.desktopFolder}>
             <img src={computer} alt="Folder"/>
             <p>My Computer</p>

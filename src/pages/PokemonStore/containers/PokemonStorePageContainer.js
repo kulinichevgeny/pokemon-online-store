@@ -26,7 +26,7 @@ const PokemonStorePageContainer = () => {
 
   useEffect(() => {
     if (isAuthorized && itemsList.length === 0) dispatch(GET_CART_REQUEST());
-  }, [dispatch])
+  }, [dispatch, itemsList.length, isAuthorized])
 
   const handlePageChange = useCallback((data, page) => {
     setCurrentPage(page);
