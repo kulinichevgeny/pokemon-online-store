@@ -19,10 +19,10 @@
 </p>
 
 ## About
-Pokémon Online Store app is my IT SHATLE React module graduation work. Made with HTML, Sass(SCSS), JavaScript, React, Redux and Material-UI. You are welcome!
+Pokémon Online Store app is my IT SHATLE React module graduation work. Desktop version looks amazing, but there are no Mobile version yet. Made with HTML, Sass(SCSS), JavaScript, React, Redux, Material-UI & Inspiration from Windows 95. You are welcome!
 
 ## Preview
-While using this app press `F11` key to enable Browser Full Screen Mode for a better user experience ✨
+While using this app press `F11` key to enable Browser Full Screen Mode for a better User Experience ✨
 
 <p align=center>
     <img alt="GIF" src="public/preview.gif" width="1080px" />
