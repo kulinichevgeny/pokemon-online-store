@@ -1,4 +1,3 @@
-import React from "react";
 import Pagination from "@material-ui/lab/Pagination";
 
 import styles from "./style.module.scss";
@@ -9,31 +8,33 @@ const PokemonStorePageLayout = ({ pokemonsList, isLoading, handleGoToDetails, cu
         <h1>Pokemon Store Page</h1>
 
         <div>
-          {isLoading ? (
+          { isLoading ? (
               <div className={styles.progressBar}/>
           ) : (
               <div>
-                <div className={styles.pokemonTitle}>Pokémon Store</div>
-                <div className={styles.pokemonWrapper}>
+                <h2 className={styles.storeFolderTitle}>Pokémon Store</h2>
+                <div className={styles.storeFolderWrapper}>
 
-                  <div className={styles.pokemonList}>
+                  <div className={styles.storeFolderPokemonList}>
                     {pokemonsList.map((pokemon) => (
                         <div className={styles.pokemonCard} key={pokemon.id}>
-                          <h3 className={styles.pokemonCardTitle} onClick={() => handleGoToDetails(pokemon.id)}>{pokemon.id}. {pokemon.name}</h3>
+                          <h3 className={styles.pokemonCardTitle}
+                              onClick={() => handleGoToDetails(pokemon.id)}>{pokemon.id}. {pokemon.name}</h3>
                           <div className={styles.pokemonCardContent}>
                             <div className={styles.pokemonCardPhoto}>
-                              <img src={pokemon.image} alt='Pokemon' onClick={() => handleGoToDetails(pokemon.id)} />
+                              <img src={pokemon.image} alt={pokemon.name} title='See more'
+                                   onClick={() => handleGoToDetails(pokemon.id)}/>
                             </div>
                             <p>Price: <strong>{pokemon.price}</strong> coins</p>
                             <button className={styles.pokemonCardButton}
-                                    onClick={() => handleGoToDetails(pokemon.id)}>See
-                              more
+                                    onClick={() => handleGoToDetails(pokemon.id)}>See more
                             </button>
                           </div>
                         </div>
                     ))}
                   </div>
 
+                  {/* Pagination */}
                   <div className={styles.paginationWrapper}>
                     <div className={styles.pagination}>
                       <Pagination

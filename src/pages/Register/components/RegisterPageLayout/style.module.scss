@@ -1,6 +1,6 @@
 @import '../../../../styles/index';
 
-.signUpWrapper {
+.signUpFolderWrapper {
   z-index: 1000;
   position: relative;
 
@@ -10,28 +10,36 @@
   padding: 10rem 0 5rem;
 }
 
-.signUpForm {
+.signUpFolderForm {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
 
-.signUpColumn {
-  display: flex;
-}
+  .signUpFormColumn {
+    display: flex;
+  }
 
-.signUpInput {
-  border: 2px inset $white !important;
-  margin: 1rem !important;
-}
+  .signUpFormInput {
+    @include borderInset;
+    margin: 1rem 1.5rem;
+  }
 
-.signUpButton {
-  @include button;
-  font-size: 1.1rem;
+  .signUpFormSelect {
+    @include borderInset;
+    background-color: $silver;
 
-  color: $white;
-  background-color: $green;
+    padding: 0.2rem 0.5rem;
+    margin-top: 1.2rem;
+  }
 
-  padding: 0.6rem 1rem 0.5rem;
-  margin-top: 2rem;
+  .signUpFormButton {
+    @include button;
+    font-size: 1.1rem;
+
+    color: $white;
+    background-color: $green;
+
+    padding: 0.6rem 1rem 0.5rem;
+    margin-top: 2.3rem;
+  }
 }

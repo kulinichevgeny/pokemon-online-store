@@ -3,23 +3,32 @@
 import styles from "./style.module.scss";
 import Counter from "../../../../commonComponents/Counter";
 
-const CartPageLayout = ({ isLoading, editPokemonId, itemsList, totalPrice, handleDeleteCartItem, handleCreateOrder, handleIncrement, handleDecrement, handleGoToDetails }) => {
+const CartPageLayout = ({
+                          isLoading,
+                          itemsList,
+                          totalPrice,
+                          handleDeleteCartItem,
+                          handleCreateOrder,
+                          handleIncrement,
+                          handleDecrement,
+                          handleGoToDetails
+                        }) => {
   return (
       <div>
         <h1>Shopping Cart Page</h1>
 
         { isLoading ? (
-            <div className={styles.progressBar} />
+            <div className={styles.progressBar}/>
         ) : (
             <div>
-              <div className={styles.cartTitle}>Shopping Cart</div>
-              <div className={styles.cartWrapper}>
-                <h2 className={styles.totalPrice}>Total Price: {totalPrice} coins</h2>
+              <div className={styles.cartFolderTitle}>Shopping Cart</div>
+              <div className={styles.cartFolderWrapper}>
+                <h2 className={styles.cartFolderTotalPrice}>Total Price: {totalPrice} coins</h2>
 
-                <div className={styles.pokemonInfoWrapper}>
+                <div className={styles.pokemonCardWrapper}>
                   {itemsList.map((item) => (
                       <div className={styles.pokemonCard} key={item.id}>
-                        <h3 className={styles.pokemonName}>{item.name}</h3>
+                        <h3 className={styles.pokemonName} onClick={() => handleGoToDetails(item.id)}>{item.name}</h3>
                         <div className={styles.pokemonCardContent}>
                           <img src={item.image} onClick={() => handleGoToDetails(item.id)} alt=""/>
                           {/*{ editPokemonId === item.id && (<CircularProgress className={styles.cardLoading}/>)}*/}
@@ -27,10 +36,13 @@ const CartPageLayout = ({ isLoading, editPokemonId, itemsList, totalPrice, handl
                               handleIncrement={() => handleIncrement(item)}
                               handleDecrement={() => handleDecrement(item)}
                           >
-                            <p className={styles.pokemonQuantity} >{item.quantity}</p>
-                            </Counter>
-                          <p className={styles.pokemonPrice}>Price: <strong>{item.price * item.quantity}</strong></p>
-                          <button className={styles.pokemonDelete} onClick={() => handleDeleteCartItem(item.id)}>Remove</button>
+                            <p className={styles.pokemonCardQuantity}>{item.quantity}</p>
+                          </Counter>
+                          <p className={styles.pokemonCardPrice}>Price: <strong>{item.price * item.quantity}</strong>
+                          </p>
+                          <button className={styles.pokemonDelete}
+                                  onClick={() => handleDeleteCartItem(item.id)}>Remove
+                          </button>
                         </div>
                       </div>
                   ))}
@@ -41,7 +53,7 @@ const CartPageLayout = ({ isLoading, editPokemonId, itemsList, totalPrice, handl
                 </div>
               </div>
             </div>
-            )}
+        )}
 
       </div>
   );
