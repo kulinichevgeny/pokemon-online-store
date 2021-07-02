@@ -68,14 +68,19 @@
 }
 
 .paginationWrapper {
-  text-align: center;
+  position: fixed;
+  z-index: 9000;
+  bottom: 4rem;
+  right: 40vw;
+
+  background: $blue;
+  @include borderOutset(2px);
 
   .pagination {
     display: inline-block;
-
-    @include borderOutset(2px);
+    background-color: $silver;
 
     padding: 0.7rem;
-    margin: 1rem auto 0;
+    margin: 0.9rem auto 0;
   }
 }

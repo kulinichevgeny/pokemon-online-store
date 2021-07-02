@@ -8,11 +8,17 @@ const PokemonStorePageLayout = ({ pokemonsList, isLoading, handleGoToDetails, cu
         <h1>Pokemon Store Page</h1>
 
         <div>
+          {/*{ isLoading ? (*/}
+          {/*    // <div className={styles.progressBar}/>*/}
+          {/*// ) : (*/}
+
+
           { isLoading ? (
               <div className={styles.progressBar}/>
           ) : (
               <div>
                 <h2 className={styles.storeFolderTitle}>Pokémon Store</h2>
+
                 <div className={styles.storeFolderWrapper}>
 
                   <div className={styles.storeFolderPokemonList}>
@@ -34,21 +40,24 @@ const PokemonStorePageLayout = ({ pokemonsList, isLoading, handleGoToDetails, cu
                     ))}
                   </div>
 
-                  {/* Pagination */}
-                  <div className={styles.paginationWrapper}>
-                    <div className={styles.pagination}>
-                      <Pagination
-                          onChange={handlePageChange}
-                          page={currentPage}
-                          count={7}
-                          variant="outlined"
-                          shape="rounded"
-                      />
-                    </div>
-                  </div>
+
                 </div>
               </div>
           )}
+          {/* Pagination */}
+          {/*<div className={styles.paginationTitle}></div>*/}
+          <div className={styles.paginationWrapper}>
+            <div className={styles.pagination}>
+              <Pagination
+                  onChange={handlePageChange}
+                  page={currentPage}
+                  count={7}
+                  variant="outlined"
+                  shape="rounded"
+              />
+            </div>
+          </div>
+
         </div>
       </div>
   )
