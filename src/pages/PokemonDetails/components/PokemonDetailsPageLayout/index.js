@@ -50,9 +50,7 @@ const PokemonDetailsPageLayout = ({ pokemonInfo, isLoading, handleAddItemToCart,
                 </div>
               </div>
             </div>
-
         )}
-
       </div>
   );
 };

@@ -25,7 +25,7 @@ const CartPageContainer = () => {
     let checked = window.confirm('Are you sure you want to delete?');
 
     if (checked) dispatch(DELETE_ITEM_REQUEST(id));
-  },[dispatch])
+  },[dispatch]);
 
   const handleCreateOrder = useCallback((event) => {
     event.preventDefault();
@@ -45,7 +45,6 @@ const CartPageContainer = () => {
     }
   },[dispatch, itemsList, totalPrice, customerId]);
 
-  //------
   const handleIncrement = useCallback((item) => {
     const itemCopy = Object.assign({}, item)
 
@@ -70,19 +69,20 @@ const CartPageContainer = () => {
       dispatch(UPDATE_QUANTITY_REQUEST(updatedData))
     }
   }, [dispatch, ]);
-  //------
 
-  return <CartPageLayout
-      itemsList={itemsList}
-      isLoading={isLoading}
-      editPokemonId={editPokemonId}
-      handleDeleteCartItem={handleDeleteCartItem}
-      totalPrice={totalPrice}
-      handleCreateOrder={handleCreateOrder}
-      handleIncrement={handleIncrement}
-      handleDecrement={handleDecrement}
-      handleGoToDetails={handleGoToDetails}
-  />;
+  return (
+        <CartPageLayout
+            itemsList={itemsList}
+            isLoading={isLoading}
+            editPokemonId={editPokemonId}
+            handleDeleteCartItem={handleDeleteCartItem}
+            totalPrice={totalPrice}
+            handleCreateOrder={handleCreateOrder}
+            handleIncrement={handleIncrement}
+            handleDecrement={handleDecrement}
+            handleGoToDetails={handleGoToDetails}
+        />
+  );
 };
 
 export default CartPageContainer;

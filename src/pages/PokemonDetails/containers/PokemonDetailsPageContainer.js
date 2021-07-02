@@ -6,6 +6,7 @@ import PokemonDetailsPageLayout from "../components/PokemonDetailsPageLayout";
 import { GET_POKEMON_DETAILS_REQUEST } from "../actions";
 import { ADD_ITEM_REQUEST, GET_CART_REQUEST } from "../../Cart/actions";
 
+
 const PokemonDetailsPageContainer = () => {
   const dispatch = useDispatch();
   const params = useParams();
@@ -33,15 +34,15 @@ const PokemonDetailsPageContainer = () => {
 
   useEffect(() => {
     if (itemsList.length === 0) dispatch(GET_CART_REQUEST());
-  }, [dispatch, itemsList.length])
+  }, [dispatch, itemsList.length]);
 
   return <PokemonDetailsPageLayout
-      pokemonInfo={pokemonInfo}
-      isLoading={isLoading}
-      handleAddItemToCart={handleAddItemToCart}
-      abilities={pokemonInfo.abilities}
-      stats={pokemonInfo.stats}
-  />;
+            pokemonInfo={pokemonInfo}
+            isLoading={isLoading}
+            handleAddItemToCart={handleAddItemToCart}
+            abilities={pokemonInfo.abilities}
+            stats={pokemonInfo.stats}
+        />
 };
 
 export default PokemonDetailsPageContainer;
