@@ -21,7 +21,7 @@
 ## About
 Pokémon Online Store app is my IT SHATLE React module graduation work. Desktop version looks amazing, but there are no Mobile version yet.
 Made with HTML, Sass(SCSS), JavaScript, React, Redux, Material-UI & Inspiration from Windows 95.
-You can check out the project [Technical Requirement](https://github.com/kulinichevgeny/pokemon-online-store/blob/master/public/technicalrequirement.md).
+You can check out the project [Technical Requirement]https://github.com/kulinichevgeny/pokemon-online-store/blob/master/public/TechnicalRequirement.md).
 You are welcome!
 
 ## Preview
