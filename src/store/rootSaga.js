@@ -7,6 +7,7 @@ import { signOutWatcher } from "../pages/Login/sagas/logoutSaga";
 import { registerFailWatcher } from "../pages/Register/sagas/registerSaga";
 import { addToCartFailWatcher, addToCartSuccessWatcher } from "../pages/Cart/sagas/addToCartSaga";
 import { createOrderSuccessWatcher } from "../pages/Cart/sagas/createOrderSaga";
+import { getOrderHistoryWatcher } from "../pages/Profile/sagas/orderHistorySaga";
 
 function* rootSaga() {
   yield all([
@@ -19,6 +20,7 @@ function* rootSaga() {
     addToCartFailWatcher(),
     addToCartSuccessWatcher(),
     createOrderSuccessWatcher(),
+    getOrderHistoryWatcher(),
   ]);
 }
 

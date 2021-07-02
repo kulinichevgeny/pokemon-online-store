@@ -38,6 +38,14 @@
   p {
     cursor: default;
   }
+
+  &Click {
+    display: none;
+    margin-bottom: 0.4rem;
+  }
+  &:hover .desktopBinFolderClick {
+    display: block;
+  }
 }
 
 .navBarWrapper {

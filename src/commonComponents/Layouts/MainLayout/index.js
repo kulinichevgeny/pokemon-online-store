@@ -61,20 +61,22 @@ const MainLayout = ({ children }) => {
         { isAuthorized ?
             quantity !== 0 ?
                 <Box className={styles.desktopBinFolder}>
+                  <span className={styles.desktopBinFolderClick}>Double Click<br/>at me!</span>
                   <img src={trash} alt="Bin" height='36px' width='36px'
                        title='Double Click at me' onDoubleClick={handleGoToCart} />
-                  <p>Items: {quantity}</p>
+                  <p>Items in your Cart: {quantity}</p>
                 </Box>
                 :
                 <Box className={styles.desktopBinFolder}>
+                  <span className={styles.desktopBinFolderClick}>Double Click<br/>at me!</span>
                   <img src={emptyTrash} alt="Bin" height='36px' width='36px'
                        title='Double Click at me' onDoubleClick={handleGoToCart}/>
-                  <p>Empty</p>
+                  <p>Nothing here</p>
                 </Box>
             :
             <Box className={styles.desktopBinFolder}>
               <img src={emptyTrash} alt="Empty Trash" height='36px' width='36px' />
-              <p>Empty</p>
+              <p>Nothing here</p>
             </Box>
         }
 
