@@ -1,10 +1,14 @@
-import { useCallback, useEffect } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 
 import CartPageLayout from "../components/CartPageLayout";
 import { CREATE_ORDER_REQUEST, DELETE_ITEM_REQUEST, GET_CART_REQUEST, UPDATE_QUANTITY_REQUEST } from "../actions";
 import { ROUTES } from "../../../routes/routeNames";
+import Popup from "../../../commonComponents/Popup";
+import { useModalPopup } from "../../../hooks";
+
+import styles from "../../PokemonDetails/components/PokemonDetailsPageLayout/style.module.scss";
 
 const CartPageContainer = () => {
   const dispatch = useDispatch();
@@ -12,6 +16,30 @@ const CartPageContainer = () => {
 
   const { itemsList, isLoading, editPokemonId, totalPrice } = useSelector(state => state.cart)
   const { customerId } = useSelector(state => state.authorization)
+
+  const [isModalOpen, handleOpen, handleClose] = useModalPopup();
+
+  const [popupTitle, setPopupTitle] = useState('');
+  const [popupStatus, setPopupStatus] = useState('');
+
+  let pokemonIdToRemove = null;
+
+  const handleDeletePopup = useCallback((id) => {
+    setPopupTitle('Are you sure you want to delete this pokemon?');
+    setPopupStatus('removeItem');
+
+    handleOpen();
+
+    pokemonIdToRemove = id;
+
+    return pokemonIdToRemove;
+  },[pokemonIdToRemove, handleOpen]);
+
+  const handleDeleteCartItem = useCallback(() => {
+    dispatch(DELETE_ITEM_REQUEST(pokemonIdToRemove));
+
+    handleClose();
+  },[dispatch, pokemonIdToRemove, handleClose]);
 
   useEffect(() => {
     dispatch(GET_CART_REQUEST());
@@ -21,11 +49,12 @@ const CartPageContainer = () => {
     history.push(`${ROUTES.POKEMON_STORE}/${id}`);
   }, [history]);
 
-  const handleDeleteCartItem = useCallback((id) => {
-    let checked = window.confirm('Are you sure you want to delete?');
+  const handleCreateOrderPopup = useCallback(() => {
+    setPopupTitle('Are you sure you want create order?');
+    setPopupStatus('createOrder');
 
-    if (checked) dispatch(DELETE_ITEM_REQUEST(id));
-  },[dispatch]);
+    handleOpen();
+  },[handleOpen]);
 
   const handleCreateOrder = useCallback((event) => {
     event.preventDefault();
@@ -37,11 +66,10 @@ const CartPageContainer = () => {
     };
 
     if (totalPrice !== 0) {
-      const checked = window.confirm('Are you sure you want create order?');
-
-      if (checked) dispatch(CREATE_ORDER_REQUEST(cartInfoToOrder))
+      dispatch(CREATE_ORDER_REQUEST(cartInfoToOrder))
     } else {
-     alert('Your cart is empty!');
+      setPopupTitle('You have no items in your cart!')
+      setPopupStatus('emptyCart')
     }
   },[dispatch, itemsList, totalPrice, customerId]);
 
@@ -68,21 +96,41 @@ const CartPageContainer = () => {
 
       dispatch(UPDATE_QUANTITY_REQUEST(updatedData))
     }
-  }, [dispatch, ]);
+  }, [dispatch]);
 
-  return (
-        <CartPageLayout
-            itemsList={itemsList}
-            isLoading={isLoading}
-            editPokemonId={editPokemonId}
-            handleDeleteCartItem={handleDeleteCartItem}
-            totalPrice={totalPrice}
-            handleCreateOrder={handleCreateOrder}
-            handleIncrement={handleIncrement}
-            handleDecrement={handleDecrement}
-            handleGoToDetails={handleGoToDetails}
-        />
-  );
+  return <>
+    <CartPageLayout
+        itemsList={itemsList}
+        isLoading={isLoading}
+        editPokemonId={editPokemonId}
+        totalPrice={totalPrice}
+        handleCreateOrderPopup={handleCreateOrderPopup}
+        handleIncrement={handleIncrement}
+        handleDecrement={handleDecrement}
+        handleGoToDetails={handleGoToDetails}
+        handleDeletePopup={handleDeletePopup}
+    />
+    <Popup
+        isOpen={isModalOpen}
+        onClose={handleClose}
+        title={popupTitle}
+    >
+
+      { popupStatus === 'createOrder' ?
+          <>
+            <button className={styles.popupCancelButton} onClick={handleClose}>Cancel</button>
+            <button className={styles.popupConfirmButton} onClick={handleCreateOrder}>Create</button>
+          </>
+          : popupStatus === 'removeItem' ?
+              <>
+                <button className={styles.popupCancelButton} onClick={handleClose}>Cancel</button>
+                <button className={styles.popupDeleteButton} onClick={handleDeleteCartItem}>Delete</button>
+              </>
+              :
+              <button className={styles.popupConfirmButton} onClick={handleClose}>Got It</button>
+      }
+    </Popup>
+  </>
 };
 
 export default CartPageContainer;

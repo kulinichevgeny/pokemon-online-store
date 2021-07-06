@@ -13,6 +13,7 @@ const registrationReducer = handleActions({
   [actions.SIGN_UP_REQUEST]: (state) => ({
     ...state,
     isLoading: true,
+    errors: null,
   }),
   [actions.SIGN_UP_SUCCESS]: (state, {payload}) => {
     const { success, message } =  payload.response;

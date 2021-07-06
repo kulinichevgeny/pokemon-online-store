@@ -8,10 +8,6 @@ const PokemonStorePageLayout = ({ pokemonsList, isLoading, handleGoToDetails, cu
         <h1>Pokemon Store Page</h1>
 
         <div>
-          {/*{ isLoading ? (*/}
-          {/*    // <div className={styles.progressBar}/>*/}
-          {/*// ) : (*/}
-
 
           { isLoading ? (
               <div className={styles.progressBar}/>
@@ -39,7 +35,6 @@ const PokemonStorePageLayout = ({ pokemonsList, isLoading, handleGoToDetails, cu
                         </div>
                     ))}
                   </div>
-
 
                 </div>
               </div>

@@ -33,3 +33,10 @@
     margin-top: 3rem;
   }
 }
+
+.popupCancelButton {
+  @include cancelButton;
+}
+.popupConfirmButton {
+  @include confirmButton;
+}
