@@ -14,6 +14,20 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  
+  & > h2 {
+    @include borderInset;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: $black;
+
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+
+    strong {
+      font-weight: 700;
+    }
+  }
 
   .signUpFormColumn {
     display: flex;

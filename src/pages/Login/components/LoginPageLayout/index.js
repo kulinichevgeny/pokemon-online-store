@@ -1,4 +1,7 @@
 import { Box, TextField } from "@material-ui/core";
+import { Link } from "react-router-dom";
+
+import { ROUTES } from "../../../../routes/routeNames";
 
 import styles from "./style.module.scss";
 
@@ -9,6 +12,7 @@ const LoginPageLayout = ({ setLoginValues, handleSubmit }) => {
 
         <Box className={styles.signInFolderWrapper}>
           <form className={styles.signInFolderForm} onSubmit={handleSubmit}>
+            <h2>Did not have an Account? <Link to={ROUTES.SIGN_UP}>Create</Link> one!</h2>
             <Box>
               <TextField
                   className={styles.signInFormInput}

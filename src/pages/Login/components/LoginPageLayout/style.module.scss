@@ -7,7 +7,7 @@
   background: url('../../../../static/img/authBackground.png') center no-repeat;
   background-size: contain;
 
-  padding: 11rem 0 6rem;
+  padding: 8rem 0 6rem;
 }
 
 .signInFolderForm {
@@ -16,6 +16,26 @@
   align-items: center;
 
   padding: 2rem 0 0.5rem;
+
+  h2 {
+    @include borderInset;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: $black;
+
+    padding: 0.5rem;
+    margin-bottom: 4rem;
+
+    a {
+      font-weight: 700;
+      color: $black;
+      
+      &:hover {
+        color: $blue;
+        text-decoration: underline;
+      }
+    }
+  }
 
   .signInFormInput {
     @include borderInset;
