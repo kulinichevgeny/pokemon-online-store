@@ -2,7 +2,7 @@ import moment from "moment";
 
 import styles from "./style.module.scss";
 
-const ProfilePageLayout = ({ userInfo, handleGetOrder, orderHistory }) => {
+const ProfilePageLayout = ({ userInfo, handleGetOrder, orderHistory, handleLogout }) => {
   return (
       <div>
         <h1>Profile Page</h1>
@@ -16,6 +16,7 @@ const ProfilePageLayout = ({ userInfo, handleGetOrder, orderHistory }) => {
             <p>Phone Number: <strong>{userInfo.phone}</strong></p>
             <span>Press <strong>Ctrl + Q</strong> to Sign Out</span>
           </div>
+          <button className={styles.signOut} onClick={handleLogout}>Sign Out</button>
           <div className={styles.checkOrderHistory}>
             <button onClick={handleGetOrder}>Order History</button>
           </div>
