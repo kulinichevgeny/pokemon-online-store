@@ -90,12 +90,6 @@
   }
 }
 
-//.cardLoading {
-//  position: absolute;
-//  top: 6.2rem;
-//  left: 2.7rem;
-//}
-
 .createOrderWrapper {
   text-align: center;
 
@@ -109,4 +103,14 @@
 
     padding: 0.55rem 1rem 0.5rem;
   }
+}
+
+.popupCancelButton {
+  @include cancelButton;
+}
+.popupConfirmButton {
+  @include confirmButton;
+}
+.popupDeleteButton {
+  @include deleteButton;
 }

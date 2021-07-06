@@ -8,7 +8,7 @@ import { ROUTES } from "../../../routes/routeNames";
 import Popup from "../../../commonComponents/Popup";
 import { useModalPopup } from "../../../hooks";
 
-import styles from "../../PokemonDetails/components/PokemonDetailsPageLayout/style.module.scss";
+import styles from "../../Cart/components/CartPageLayout/style.module.scss";
 
 const CartPageContainer = () => {
   const dispatch = useDispatch();
