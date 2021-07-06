@@ -9,6 +9,7 @@ import Popup from "../../../commonComponents/Popup";
 import { useModalPopup } from "../../../hooks";
 
 import styles from "../../Cart/components/CartPageLayout/style.module.scss";
+import {SIGN_OUT} from "../../Login/actions";
 
 const CartPageContainer = () => {
   const dispatch = useDispatch();
@@ -84,7 +85,6 @@ const CartPageContainer = () => {
     dispatch(UPDATE_QUANTITY_REQUEST(updatedData))
   }, [dispatch]);
 
-
   const handleDecrement = useCallback((item) => {
     const itemCopy = Object.assign({}, item)
 
@@ -95,6 +95,19 @@ const CartPageContainer = () => {
       };
 
       dispatch(UPDATE_QUANTITY_REQUEST(updatedData))
+    }
+  }, [dispatch]);
+
+  // Ctrl + Q = LOGOUT
+  useEffect(() => {
+    const onKeyPress = (event) => {
+      if (event.key === '\u0011') {
+        dispatch(SIGN_OUT())
+      }
+    };
+    document.addEventListener('keypress', onKeyPress);
+    return () => {
+      document.removeEventListener('keypress', onKeyPress);
     }
   }, [dispatch]);
 
