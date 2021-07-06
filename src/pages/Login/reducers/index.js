@@ -15,6 +15,7 @@ const authorizationReducer = handleActions({
   [actions.SIGN_IN_REQUEST]: (state) => ({
     ...state,
     isLoading: true,
+    errors: null,
   }),
   [actions.SIGN_IN_SUCCESS]: (state, { payload }) => {
     const { accessToken, _id, ...accountInfo } = payload.response;

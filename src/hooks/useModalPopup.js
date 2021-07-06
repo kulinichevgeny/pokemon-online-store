@@ -8,10 +8,14 @@ export default (method = null, openStatus = false) => {
   },[]);
 
   const handleClose = useCallback(() => {
-    if (method) method();
-
     setOpen(false);
   },[]);
 
-  return [isOpen, handleOpen, handleClose];
+  const handleSubmit = useCallback(() => {
+    if (method) method();
+
+    setOpen(false);
+  },[method]);
+
+  return [isOpen, handleOpen, handleClose, handleSubmit];
 };

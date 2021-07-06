@@ -43,3 +43,15 @@
     margin-top: 2.3rem;
   }
 }
+
+.popupContent {
+  text-align: left;
+  margin-bottom: 1rem;
+}
+
+.popupCancelButton {
+  @include cancelButton;
+}
+.popupConfirmButton {
+  @include confirmButton;
+}

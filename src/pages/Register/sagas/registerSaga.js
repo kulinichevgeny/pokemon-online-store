@@ -3,9 +3,9 @@ import { takeEvery } from "redux-saga/effects";
 import { SIGN_UP_FAIL } from "../actions";
 
 function registerFailSaga(action) {
-   const { response } = action.payload;
+   // const { response } = action.payload;
 
-   alert(response);
+   // alert(response);
 }
 
 export function* registerFailWatcher(action) {

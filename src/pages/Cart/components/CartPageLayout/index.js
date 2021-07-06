@@ -1,5 +1,3 @@
-// import CircularProgress from '@material-ui/core/CircularProgress';
-
 import styles from "./style.module.scss";
 import Counter from "../../../../commonComponents/Counter";
 
@@ -7,11 +5,11 @@ const CartPageLayout = ({
                           isLoading,
                           itemsList,
                           totalPrice,
-                          handleDeleteCartItem,
-                          handleCreateOrder,
+                          handleCreateOrderPopup,
                           handleIncrement,
                           handleDecrement,
-                          handleGoToDetails
+                          handleGoToDetails,
+                          handleDeletePopup,
                         }) => {
   return (
       <div>
@@ -31,7 +29,6 @@ const CartPageLayout = ({
                         <h3 className={styles.pokemonName} onClick={() => handleGoToDetails(item.id)}>{item.name}</h3>
                         <div className={styles.pokemonCardContent}>
                           <img src={item.image} onClick={() => handleGoToDetails(item.id)} alt=""/>
-                          {/*{ editPokemonId === item.id && (<CircularProgress className={styles.cardLoading}/>)}*/}
                           <Counter
                               handleIncrement={() => handleIncrement(item)}
                               handleDecrement={() => handleDecrement(item)}
@@ -41,7 +38,7 @@ const CartPageLayout = ({
                           <p className={styles.pokemonCardPrice}>Price: <strong>{item.price * item.quantity}</strong>
                           </p>
                           <button className={styles.pokemonDelete}
-                                  onClick={() => handleDeleteCartItem(item.id)}>Remove
+                                  onClick={() => handleDeletePopup(item.id)}>Remove
                           </button>
                         </div>
                       </div>
@@ -49,7 +46,7 @@ const CartPageLayout = ({
                 </div>
 
                 <div className={styles.createOrderWrapper}>
-                  <button className={styles.createOrderButton} onClick={handleCreateOrder}>Create Order</button>
+                  <button className={styles.createOrderButton} onClick={handleCreateOrderPopup}>Create Order</button>
                 </div>
               </div>
             </div>

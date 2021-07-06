@@ -64,6 +64,31 @@
   }
 }
 
+@mixin confirmButton {
+  color: $white;
+  border-radius: 0.3rem;
+  background-color: $green;
+
+  padding: 0.6rem 0.8rem 0.4rem;
+  margin: 0 0.7rem;
+}
+@mixin cancelButton {
+  color: $white;
+  border-radius: 0.3rem;
+  background-color: $silver;
+
+  padding: 0.6rem 0.8rem 0.4rem;
+  margin: 0 0.7rem;
+}
+@mixin deleteButton {
+  color: $white;
+  border-radius: 0.3rem;
+  background-color: $red;
+
+  padding: 0.6rem 0.8rem 0.4rem;
+  margin: 0 0.7rem;
+}
+
 // ========== folders styles ==========
 @mixin folderHeader {
   height: 1.9rem;

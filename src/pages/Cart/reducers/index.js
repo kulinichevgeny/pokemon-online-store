@@ -8,6 +8,7 @@ const defaultState = {
   itemsList: [],
   isLoading: false,
   editPokemonId: null,
+  pokemonStatus: null,
   errors: null,
 };
 
@@ -39,6 +40,7 @@ const cart = handleActions({
   [actions.ADD_ITEM_REQUEST]: (state) => ({
     ...state,
     isLoading: true,
+    popupTitle: null,
   }),
   [actions.ADD_ITEM_SUCCESS]: (state, {payload}) => {
     const { totalPrice, quantity} = payload.response;
@@ -48,12 +50,14 @@ const cart = handleActions({
       isLoading: false,
       totalPrice,
       quantity,
+      pokemonStatus: 'You successfully add pokemon to the cart!',
     }
   },
   [actions.ADD_ITEM_FAIL]: (state, {payload}) => ({
     ...state,
     isLoading: false,
     errors: payload,
+    pokemonStatus: 'Pokemon already in the cart!',
   }),
 
   // ============ DELETE ITEM FROM CART ============
@@ -129,7 +133,6 @@ const cart = handleActions({
   [actions.UPDATE_QUANTITY_FAIL]: (state, {payload}) => ({
     ...state,
     editPokemonId: null,
-
     isCardLoading: false,
     errors: payload,
   }),
