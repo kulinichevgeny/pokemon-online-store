@@ -30,6 +30,10 @@ const ProfilePageContainer = () => {
     }
   }, [dispatch]);
 
+  const handleLogout = useCallback(() => {
+    dispatch(SIGN_OUT())
+  },[dispatch])
+
   useEffect(() => {
     if (itemsList.length === 0) dispatch(GET_CART_REQUEST());
   }, [dispatch, itemsList.length])
@@ -38,6 +42,7 @@ const ProfilePageContainer = () => {
       handleGetOrder={handleGetOrder}
       userInfo={userInfo}
       orderHistory={orderHistory}
+      handleLogout={handleLogout}
   />;
 };
 

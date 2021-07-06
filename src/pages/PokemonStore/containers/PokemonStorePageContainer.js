@@ -6,6 +6,7 @@ import PokemonStorePageLayout from "../components/PokemonStorePageLayout";
 import { GET_POKEMONS_REQUEST } from "../actions";
 import { ROUTES } from "../../../routes/routeNames";
 import { GET_CART_REQUEST } from "../../Cart/actions";
+import {SIGN_OUT} from "../../Login/actions";
 
 const PokemonStorePageContainer = () => {
   const dispatch = useDispatch();
@@ -35,6 +36,19 @@ const PokemonStorePageContainer = () => {
   const handleGoToDetails = useCallback((id) => {
     history.push(`${ROUTES.POKEMON_STORE}/${id}`);
   }, [history]);
+
+  // Ctrl + Q = LOGOUT
+  useEffect(() => {
+    const onKeyPress = (event) => {
+      if (event.key === '\u0011') {
+        dispatch(SIGN_OUT())
+      }
+    };
+    document.addEventListener('keypress', onKeyPress);
+    return () => {
+      document.removeEventListener('keypress', onKeyPress);
+    }
+  }, [dispatch]);
 
   return <PokemonStorePageLayout
       pokemonsList={pokemonsList}

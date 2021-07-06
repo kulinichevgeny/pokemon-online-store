@@ -31,6 +31,15 @@
       padding: 0.4rem 0.8rem 0.35rem;
     }
   }
+
+  .signOut {
+    @include button;
+    color: $white;
+    background-color: $red;
+
+    padding: 0.5rem;
+    margin-top: 1rem;
+  }
 }
 
 .accountInfo {

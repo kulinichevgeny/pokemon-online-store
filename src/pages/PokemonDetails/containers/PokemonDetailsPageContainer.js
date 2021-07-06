@@ -9,6 +9,7 @@ import { useModalPopup } from "../../../hooks";
 import Popup from "../../../commonComponents/Popup";
 
 import styles from "../components/PokemonDetailsPageLayout/style.module.scss";
+import {SIGN_OUT} from "../../Login/actions";
 
 const PokemonDetailsPageContainer = () => {
   const dispatch = useDispatch();
@@ -42,6 +43,19 @@ const PokemonDetailsPageContainer = () => {
   useEffect(() => {
     if (itemsList.length === 0) dispatch(GET_CART_REQUEST());
   }, [dispatch, itemsList.length]);
+
+  // Ctrl + Q = LOGOUT
+  useEffect(() => {
+    const onKeyPress = (event) => {
+      if (event.key === '\u0011') {
+        dispatch(SIGN_OUT())
+      }
+    };
+    document.addEventListener('keypress', onKeyPress);
+    return () => {
+      document.removeEventListener('keypress', onKeyPress);
+    }
+  }, [dispatch]);
 
   return <>
     <PokemonDetailsPageLayout
