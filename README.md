@@ -1,15 +1,17 @@
 <h1 align="center">Pokémon Online Store</h1>
 
 <p align="center">
-    <!-- <a href="https://github.com/kulinichevgeny/pokemon-online-store/graphs/contributors" alt="Contributors">
-        <img src="https://img.shields.io/github/contributors/kulinichevgeny/pokemon-online-store" /></a> -->
-    <a href="#" alt="Activity">
+    <a href="https://github.com/kulinichevgeny/pokemon-online-store/graphs/contributors" alt="contributors">
+        <img src="https://img.shields.io/github/contributors/kulinichevgeny/pokemon-online-store" /></a>
+    <a href="https://github.com/kulinichevgeny/pokemon-online-store/commits" alt="commit activity">
         <img src="https://img.shields.io/github/commit-activity/m/kulinichevgeny/pokemon-online-store" /></a>
-    <a href="#" alt="Last commit">
+    <a href="https://github.com/kulinichevgeny/pokemon-online-store/commits" alt="last commit">
         <img src="https://img.shields.io/github/last-commit/kulinichevgeny/pokemon-online-store" /></a>
-    <a href="https://github.com/kulinichevgeny/pokemon-online-store/blob/master/LICENSE" alt="License">
+    <a href="https://github.com/kulinichevgeny/pokemon-online-store" alt="repo Size">
+        <img src="https://img.shields.io/github/repo-size/kulinichevgeny/pokemon-online-store" /></a>
+    <a href="https://github.com/kulinichevgeny/pokemon-online-store/blob/master/LICENSE" alt="license">
         <img src="https://img.shields.io/github/license/kulinichevgeny/pokemon-online-store.svg" /></a>
-    <a href="#" alt="License">
+    <a href="https://github.com/kulinichevgeny/pokemon-online-store" alt="npm package">
         <img src="https://badge.fury.io/js/npm.svg" /></a>
 </p>
 
