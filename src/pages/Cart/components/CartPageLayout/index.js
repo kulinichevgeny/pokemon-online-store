@@ -28,7 +28,7 @@ const CartPageLayout = ({
                       <div className={styles.pokemonCard} key={item.id}>
                         <h3 className={styles.pokemonName} onClick={() => handleGoToDetails(item.id)}>{item.name}</h3>
                         <div className={styles.pokemonCardContent}>
-                          <img src={item.image} onClick={() => handleGoToDetails(item.id)} alt=""/>
+                          <img src={item.image} onClick={() => handleGoToDetails(item.id)} alt="" title='Go to details' />
                           <Counter
                               handleIncrement={() => handleIncrement(item)}
                               handleDecrement={() => handleDecrement(item)}

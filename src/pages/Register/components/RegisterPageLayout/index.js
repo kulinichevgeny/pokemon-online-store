@@ -12,6 +12,7 @@ const RegisterPageLayout = ({ registerValues, setRegisterValues, handleSubmit })
 
         <Box className={styles.signUpFolderWrapper}>
           <form className={styles.signUpFolderForm} onSubmit={handleSubmit}>
+            <h2>You have to <strong>Sign Up</strong> if you want to see <strong>more content</strong> 🙌🏼</h2>
             <Box className={styles.signUpFormColumn}>
               <Box>
                   <Box>

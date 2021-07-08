@@ -56,7 +56,7 @@ const RegisterPageContainer = () => {
         handleChange={setRegisterValues}
         registerValues={registerValues}
     />
-    { errors ?
+    { errors || registerValues.password !== registerValues.confirmedPassword ?
       <Popup
           isOpen={isModalOpen}
           onClose={handleClose}
