@@ -1,8 +1,8 @@
 <h1 align="center">Pokémon Online Store</h1>
 
 <p align="center">
-    <a href="https://github.com/kulinichevgeny/pokemon-online-store/graphs/contributors" alt="Contributors">
-        <img src="https://img.shields.io/github/contributors/kulinichevgeny/pokemon-online-store" /></a>
+    <!-- <a href="https://github.com/kulinichevgeny/pokemon-online-store/graphs/contributors" alt="Contributors">
+        <img src="https://img.shields.io/github/contributors/kulinichevgeny/pokemon-online-store" /></a> -->
     <a href="#" alt="Activity">
         <img src="https://img.shields.io/github/commit-activity/m/kulinichevgeny/pokemon-online-store" /></a>
     <a href="#" alt="Last commit">
