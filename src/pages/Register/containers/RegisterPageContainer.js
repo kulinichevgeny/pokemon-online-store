@@ -3,10 +3,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 
 import RegisterPageLayout from "../components/RegisterPageLayout";
+import Popup from "../../../commonComponents/Popup";
 import { useForm, useModalPopup } from "../../../hooks/";
 import { SIGN_UP_REQUEST } from "../actions";
 import { ROUTES } from "../../../routes/routeNames";
-import Popup from "../../../commonComponents/Popup";
 
 import styles from "../../Register/components/RegisterPageLayout/style.module.scss";
 
