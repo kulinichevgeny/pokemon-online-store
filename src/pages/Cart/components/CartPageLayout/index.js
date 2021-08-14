@@ -1,5 +1,5 @@
-import styles from "./style.module.scss";
-import Counter from "../../../../commonComponents/Counter";
+import styles from "./style.module.scss"
+import Counter from "../../../../commonComponents/Counter"
 
 const CartPageLayout = ({
                           isLoading,
@@ -53,7 +53,7 @@ const CartPageLayout = ({
         )}
 
       </div>
-  );
-};
+  )
+}
 
-export default CartPageLayout;
+export default CartPageLayout

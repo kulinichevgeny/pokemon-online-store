@@ -1,13 +1,13 @@
-import { handleActions } from "redux-actions";
+import { handleActions } from "redux-actions"
 
-import * as actions from "../actions";
+import * as actions from "../actions"
 
 const defaultState = {
   pokemonsList: [],
   isLoading: false,
   errors: null,
   pokemonPage: 1,
-};
+}
 
 const pokemonsManager = handleActions({
   [actions.GET_POKEMONS_REQUEST]: (state, {payload}) => ({
@@ -25,6 +25,6 @@ const pokemonsManager = handleActions({
     isLoading: false,
     errors: payload,
   }),
-}, defaultState);
+}, defaultState)
 
-export default pokemonsManager;
+export default pokemonsManager

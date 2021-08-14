@@ -1,22 +1,22 @@
-import { useCallback } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useHistory } from "react-router-dom";
+import { useCallback } from "react"
+import { useDispatch, useSelector } from "react-redux"
+import { useHistory } from "react-router-dom"
 
-import RegisterPageLayout from "../components/RegisterPageLayout";
-import Popup from "../../../commonComponents/Popup";
-import { useForm, useModalPopup } from "../../../hooks/";
-import { SIGN_UP_REQUEST } from "../actions";
-import { ROUTES } from "../../../routes/routeNames";
+import RegisterPageLayout from "../components/RegisterPageLayout"
+import Popup from "../../../commonComponents/Popup"
+import { useForm, useModalPopup } from "../../../hooks/"
+import { SIGN_UP_REQUEST } from "../actions"
+import { ROUTES } from "../../../routes/routeNames"
 
-import styles from "../../Register/components/RegisterPageLayout/style.module.scss";
+import styles from "../../Register/components/RegisterPageLayout/style.module.scss"
 
 const RegisterPageContainer = () => {
-  const dispatch = useDispatch();
-  const history = useHistory();
+  const dispatch = useDispatch()
+  const history = useHistory()
 
-  const { success, message, errors } = useSelector(state => state.registration);
+  const { success, message, errors } = useSelector(state => state.registration)
 
-  const [isModalOpen, handleOpen, handleClose] = useModalPopup();
+  const [isModalOpen, handleOpen, handleClose] = useModalPopup()
 
   const [registerValues, setRegisterValues] = useForm({
     email: '',
@@ -26,27 +26,27 @@ const RegisterPageContainer = () => {
     lastName: '',
     phone: '',
     gender: 'male',
-  });
+  })
 
   const handleSubmit = useCallback((event) => {
-    event.preventDefault();
+    event.preventDefault()
 
-    const {confirmedPassword, ...requestBody} = registerValues;
+    const {confirmedPassword, ...requestBody} = registerValues
 
     if (registerValues.password === registerValues.confirmedPassword) {
-      dispatch(SIGN_UP_REQUEST(requestBody));
+      dispatch(SIGN_UP_REQUEST(requestBody))
     } else {
-      handleOpen();
+      handleOpen()
     }
 
-    handleOpen();
-  },[dispatch, registerValues, handleOpen]);
+    handleOpen()
+  },[dispatch, registerValues, handleOpen])
 
   const handleAuth = useCallback(() => {
-    handleClose();
+    handleClose()
 
     if (success) history.push(ROUTES.SIGN_IN)
-  },[handleClose, history, success]);
+  },[handleClose, history, success])
 
   return <>
     <RegisterPageLayout
@@ -79,6 +79,6 @@ const RegisterPageContainer = () => {
       </Popup>
     }
   </>
-};
+}
 
-export default RegisterPageContainer;
+export default RegisterPageContainer

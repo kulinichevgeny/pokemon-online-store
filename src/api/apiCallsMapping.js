@@ -1,20 +1,20 @@
-import * as pokemonsStoreActions from "../pages/PokemonStore/actions";
-import * as pokemonsStoreApi from "../pages/PokemonStore/api";
+import * as pokemonsStoreActions from "../pages/PokemonStore/actions"
+import * as pokemonsStoreApi from "../pages/PokemonStore/api"
 
-import * as pokemonDetailsActions from "../pages/PokemonDetails/actions";
-import * as pokemonDetailsApi from "../pages/PokemonDetails/api";
+import * as pokemonDetailsActions from "../pages/PokemonDetails/actions"
+import * as pokemonDetailsApi from "../pages/PokemonDetails/api"
 
-import * as cartActions from "../pages/Cart/actions";
-import * as cartApi from "../pages/Cart/api";
+import * as cartActions from "../pages/Cart/actions"
+import * as cartApi from "../pages/Cart/api"
 
-import * as loginActions from "../pages/Login/actions";
-import * as loginApi from "../pages/Login/api";
+import * as loginActions from "../pages/Login/actions"
+import * as loginApi from "../pages/Login/api"
 
-import * as registerActions from "../pages/Register/actions";
-import * as registerApi from "../pages/Register/api";
+import * as registerActions from "../pages/Register/actions"
+import * as registerApi from "../pages/Register/api"
 
-import * as profileActions from "../pages/Profile/actions";
-import * as profileApi from "../pages/Profile/api";
+import * as profileActions from "../pages/Profile/actions"
+import * as profileApi from "../pages/Profile/api"
 
 const apiCallsMapping = (action) => {
   const mapping = {
@@ -33,13 +33,13 @@ const apiCallsMapping = (action) => {
     [registerActions.SIGN_UP_REQUEST]: registerApi.signUp,
 
     [profileActions.GET_ORDER_REQUEST]: profileApi.getOrder,
-  };
-
-  if (!mapping.hasOwnProperty(action.type)) {
-    throw Error('Not mapped action');
   }
 
-  return mapping[action.type];
-};
+  if (!mapping.hasOwnProperty(action.type)) {
+    throw Error('Not mapped action')
+  }
 
-export default apiCallsMapping;
+  return mapping[action.type]
+}
+
+export default apiCallsMapping

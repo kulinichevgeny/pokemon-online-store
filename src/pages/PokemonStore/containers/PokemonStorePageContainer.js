@@ -1,41 +1,41 @@
-import { useCallback, useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useHistory } from "react-router-dom";
+import { useCallback, useEffect, useState } from "react"
+import { useDispatch, useSelector } from "react-redux"
+import { useHistory } from "react-router-dom"
 
-import PokemonStorePageLayout from "../components/PokemonStorePageLayout";
-import { GET_POKEMONS_REQUEST } from "../actions";
-import { ROUTES } from "../../../routes/routeNames";
-import { GET_CART_REQUEST } from "../../Cart/actions";
-import {SIGN_OUT} from "../../Login/actions";
+import PokemonStorePageLayout from "../components/PokemonStorePageLayout"
+import { GET_POKEMONS_REQUEST } from "../actions"
+import { ROUTES } from "../../../routes/routeNames"
+import { GET_CART_REQUEST } from "../../Cart/actions"
+import { SIGN_OUT } from "../../Login/actions"
 
 const PokemonStorePageContainer = () => {
-  const dispatch = useDispatch();
-  const history = useHistory();
+  const dispatch = useDispatch()
+  const history = useHistory()
 
-  const { pokemonsList, isLoading, pokemonPage } = useSelector(state => state.pokemonsManager);
-  const { isAuthorized } = useSelector(state => state.authorization);
+  const { pokemonsList, isLoading, pokemonPage } = useSelector(state => state.pokemonsManager)
+  const { isAuthorized } = useSelector(state => state.authorization)
   const { itemsList } = useSelector(state => state.cart)
 
-  const [currentPage, setCurrentPage] = useState(pokemonPage);
+  const [currentPage, setCurrentPage] = useState(pokemonPage)
 
   useEffect(() => {
     if (pokemonsList.length === 0 || pokemonPage !== currentPage)  {
-      dispatch(GET_POKEMONS_REQUEST(currentPage));
+      dispatch(GET_POKEMONS_REQUEST(currentPage))
     }
 
-  }, [dispatch, currentPage, pokemonPage, pokemonsList.length]);
+  }, [dispatch, currentPage, pokemonPage, pokemonsList.length])
 
   useEffect(() => {
-    if (isAuthorized && itemsList.length === 0) dispatch(GET_CART_REQUEST());
+    if (isAuthorized && itemsList.length === 0) dispatch(GET_CART_REQUEST())
   }, [dispatch, itemsList.length, isAuthorized])
 
   const handlePageChange = useCallback((data, page) => {
-    setCurrentPage(page);
+    setCurrentPage(page)
   },[])
 
   const handleGoToDetails = useCallback((id) => {
-    history.push(`${ROUTES.POKEMON_STORE}/${id}`);
-  }, [history]);
+    history.push(`${ROUTES.POKEMON_STORE}/${id}`)
+  }, [history])
 
   // Ctrl + Q = LOGOUT
   useEffect(() => {
@@ -43,12 +43,12 @@ const PokemonStorePageContainer = () => {
       if (event.key === '\u0011') {
         dispatch(SIGN_OUT())
       }
-    };
-    document.addEventListener('keypress', onKeyPress);
-    return () => {
-      document.removeEventListener('keypress', onKeyPress);
     }
-  }, [dispatch]);
+    document.addEventListener('keypress', onKeyPress)
+    return () => {
+      document.removeEventListener('keypress', onKeyPress)
+    }
+  }, [dispatch])
 
   return <PokemonStorePageLayout
       pokemonsList={pokemonsList}
@@ -56,7 +56,7 @@ const PokemonStorePageContainer = () => {
       handleGoToDetails={handleGoToDetails}
       currentPage={currentPage}
       handlePageChange={handlePageChange}
-  />;
-};
+  />
+}
 
-export default PokemonStorePageContainer;
+export default PokemonStorePageContainer

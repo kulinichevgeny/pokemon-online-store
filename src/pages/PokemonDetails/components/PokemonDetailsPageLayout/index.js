@@ -1,7 +1,7 @@
-import { Link } from "react-router-dom";
+import { Link } from "react-router-dom"
 
-import { ROUTES } from "../../../../routes/routeNames";
-import styles from "./style.module.scss";
+import { ROUTES } from "../../../../routes/routeNames"
+import styles from "./style.module.scss"
 
 const PokemonDetailsPageLayout = ({ pokemonInfo, isLoading, handleAddItemToCart, abilities, stats }) => {
   return (
@@ -52,7 +52,7 @@ const PokemonDetailsPageLayout = ({ pokemonInfo, isLoading, handleAddItemToCart,
             </div>
         )}
       </div>
-  );
-};
+  )
+}
 
-export default PokemonDetailsPageLayout;
+export default PokemonDetailsPageLayout

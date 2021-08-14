@@ -1,3 +1,3 @@
-import api from "../../../api/config";
+import api from "../../../api/config"
 
-export const getOrder = () => api.get('order');
+export const getOrder = () => api.get('order')

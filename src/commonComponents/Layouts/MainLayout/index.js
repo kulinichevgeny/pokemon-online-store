@@ -1,22 +1,22 @@
-import { Link, useHistory } from "react-router-dom";
-import { useSelector } from "react-redux";
-import { useCallback } from "react";
-import  useSound from "use-sound";
+import { Link, useHistory } from "react-router-dom"
+import { useSelector } from "react-redux"
+import { useCallback } from "react"
+import  useSound from "use-sound"
 
-import { ROUTES } from "../../../routes/routeNames";
-import { Box } from "@material-ui/core";
+import { ROUTES } from "../../../routes/routeNames"
+import { Box } from "@material-ui/core"
 
-import styles from "./style.module.scss";
-import computer from "../../../static/img/computer.png";
-import network from "../../../static/img/network.png";
-import folder from "../../../static/img/folder.png";
-import spotify from "../../../static/img/spotify.png";
-import trash from "../../../static/img/trash.png";
-import emptyTrash from "../../../static/img/emptyTrash.png";
-import sound from "../../../static/directed.mp3";
+import styles from "./style.module.scss"
+import computer from "../../../static/img/computer.png"
+import network from "../../../static/img/network.png"
+import folder from "../../../static/img/folder.png"
+import spotify from "../../../static/img/spotify.png"
+import trash from "../../../static/img/trash.png"
+import emptyTrash from "../../../static/img/emptyTrash.png"
+import sound from "../../../static/directed.mp3"
 
 const MainLayout = ({ children }) => {
-  const history = useHistory();
+  const history = useHistory()
 
   const { quantity } = useSelector(state => state.cart)
   const { isAuthorized } = useSelector(state => state.authorization)
@@ -25,14 +25,14 @@ const MainLayout = ({ children }) => {
     const [play] = useSound(
         sound,
         {volume: 0.5}
-    );
+    )
 
-    return <button className={styles.navBarStartButton} onClick={play}>Start</button>;
-  };
+    return <button className={styles.navBarStartButton} onClick={play}>Start</button>
+  }
 
   const handleGoToCart = useCallback(() => {
-    history.push(`${ROUTES.CART}`);
-  }, [history]);
+    history.push(`${ROUTES.CART}`)
+  }, [history])
 
   return (
       <div>
@@ -129,6 +129,6 @@ const MainLayout = ({ children }) => {
         <div>{children}</div>
       </div>
   )
-};
+}
 
-export default MainLayout;
+export default MainLayout

@@ -1,6 +1,6 @@
-import moment from "moment";
+import moment from "moment"
 
-import styles from "./style.module.scss";
+import styles from "./style.module.scss"
 
 const ProfilePageLayout = ({ userInfo, handleGetOrder, orderHistory, handleLogout }) => {
   return (
@@ -35,6 +35,6 @@ const ProfilePageLayout = ({ userInfo, handleGetOrder, orderHistory, handleLogou
         </div>
       </div>
   )
-};
+}
 
-export default ProfilePageLayout;
+export default ProfilePageLayout

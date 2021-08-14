@@ -1,12 +1,12 @@
-import { handleActions } from "redux-actions";
+import { handleActions } from "redux-actions"
 
-import * as actions from "../actions";
+import * as actions from "../actions"
 
 const defaultState = {
   orderHistory: [],
   isLoading: false,
   errors: null,
-};
+}
 
 const order = handleActions({
   [actions.GET_ORDER_REQUEST]: (state) => ({
@@ -23,6 +23,6 @@ const order = handleActions({
     isLoading: false,
     errors: payload,
   }),
-}, defaultState);
+}, defaultState)
 
-export default order;
+export default order

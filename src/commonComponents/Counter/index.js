@@ -1,4 +1,4 @@
-import styles from "./style.module.scss";
+import styles from "./style.module.scss"
 
 const Counter = ({ children, handleIncrement, handleDecrement }) => {
   return (
@@ -7,7 +7,7 @@ const Counter = ({ children, handleIncrement, handleDecrement }) => {
         { children }
         <button onClick={handleIncrement}>＋</button>
       </div>
-  );
-};
+  )
+}
 
-export default Counter;
+export default Counter

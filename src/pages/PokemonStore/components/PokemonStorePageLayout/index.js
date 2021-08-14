@@ -1,6 +1,6 @@
-import Pagination from "@material-ui/lab/Pagination";
+import Pagination from "@material-ui/lab/Pagination"
 
-import styles from "./style.module.scss";
+import styles from "./style.module.scss"
 
 const PokemonStorePageLayout = ({ pokemonsList, isLoading, handleGoToDetails, currentPage, handlePageChange }) => {
   return (
@@ -40,7 +40,6 @@ const PokemonStorePageLayout = ({ pokemonsList, isLoading, handleGoToDetails, cu
               </div>
           )}
           {/* Pagination */}
-          {/*<div className={styles.paginationTitle}></div>*/}
           <div className={styles.paginationWrapper}>
             <div className={styles.pagination}>
               <Pagination
@@ -56,6 +55,6 @@ const PokemonStorePageLayout = ({ pokemonsList, isLoading, handleGoToDetails, cu
         </div>
       </div>
   )
-};
+}
 
-export default PokemonStorePageLayout;
+export default PokemonStorePageLayout
