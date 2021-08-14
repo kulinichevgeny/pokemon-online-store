@@ -1,6 +1,6 @@
-import axios from "axios";
+import axios from "axios"
 
-const domain = "https://demo-api.it-shatle.by";
+const domain = "https://demo-api.it-shatle.by"
 
 const config = {
   baseURL: domain,
@@ -10,8 +10,8 @@ const config = {
     "Content-type": "application/json",
     Pragma: "no-cache",
   },
-};
+}
 
-const api = axios.create(config);
+const api = axios.create(config)
 
-export default api;
+export default api

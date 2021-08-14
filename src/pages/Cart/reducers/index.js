@@ -1,6 +1,6 @@
-import { handleActions } from "redux-actions";
+import { handleActions } from "redux-actions"
 
-import * as actions from "../actions";
+import * as actions from "../actions"
 
 const defaultState = {
   totalPrice: 0,
@@ -10,7 +10,7 @@ const defaultState = {
   editPokemonId: null,
   pokemonStatus: null,
   errors: null,
-};
+}
 
 const cart = handleActions({
   // ============ GET CART ============
@@ -19,7 +19,7 @@ const cart = handleActions({
     isLoading: true,
   }),
   [actions.GET_CART_SUCCESS]: (state, {payload}) => {
-    const { totalPrice, quantity, customerId, itemsList } = payload.response;
+    const { totalPrice, quantity, customerId, itemsList } = payload.response
 
     return {
       ...state,
@@ -43,7 +43,7 @@ const cart = handleActions({
     popupTitle: null,
   }),
   [actions.ADD_ITEM_SUCCESS]: (state, {payload}) => {
-    const { totalPrice, quantity} = payload.response;
+    const { totalPrice, quantity} = payload.response
 
     return {
       ...state,
@@ -66,15 +66,15 @@ const cart = handleActions({
     isLoading: true,
   }),
   [actions.DELETE_ITEM_SUCCESS]: (state, {payload}) => {
-    const { cartState, removedItemId } = payload.response;
+    const { cartState, removedItemId } = payload.response
 
-    const itemsListCopy = [...state.itemsList];
+    const itemsListCopy = [...state.itemsList]
 
     const itemIndexToRemove = itemsListCopy.findIndex(item => {
-      return removedItemId === item.id;
+      return removedItemId === item.id
     })
 
-    itemsListCopy.splice(itemIndexToRemove, 1);
+    itemsListCopy.splice(itemIndexToRemove, 1)
 
     return {
       ...state,
@@ -111,15 +111,15 @@ const cart = handleActions({
     editPokemonId: payload.id,
   }),
   [actions.UPDATE_QUANTITY_SUCCESS]: (state, {payload}) => {
-    const { cartState, updatedItem } = payload.response;
+    const { cartState, updatedItem } = payload.response
 
-    const itemsListCopy = [...state.itemsList];
+    const itemsListCopy = [...state.itemsList]
 
     const itemToUpdate = itemsListCopy.find(item => {
-      return updatedItem.id === item.id;
+      return updatedItem.id === item.id
     })
 
-    itemToUpdate.quantity =  updatedItem.quantity;
+    itemToUpdate.quantity =  updatedItem.quantity
 
     return {
       ...state,
@@ -136,6 +136,6 @@ const cart = handleActions({
     isCardLoading: false,
     errors: payload,
   }),
-}, defaultState);
+}, defaultState)
 
-export default cart;
+export default cart

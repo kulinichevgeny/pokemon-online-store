@@ -6,4 +6,4 @@ export const ROUTES = {
   POKEMON_DETAILS: '/pokemon/:id',
   CART: '/cart',
   PROFILE: '/profile',
-};
+}

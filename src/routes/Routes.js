@@ -1,14 +1,14 @@
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route } from "react-router-dom"
 
-import PrivateRoute from "./PrivateRoute";
-import { ROUTES } from "./routeNames";
-import HomePageContainer from "../pages/Home/containers/HomePageContainer";
-import PokemonDetailsPageContainer from "../pages/PokemonDetails/containers/PokemonDetailsPageContainer";
-import PokemonStorePageContainer from "../pages/PokemonStore/containers/PokemonStorePageContainer";
-import LoginPageContainer from "../pages/Login/containers/LoginPageContainer";
-import RegisterPageContainer from "../pages/Register/containers/RegisterPageContainer";
-import CartPageContainer from "../pages/Cart/containers/CartPageContainer";
-import ProfilePageContainer from "../pages/Profile/containers/ProfilePageContainer";
+import PrivateRoute from "./PrivateRoute"
+import { ROUTES } from "./routeNames"
+import HomePageContainer from "../pages/Home/containers/HomePageContainer"
+import PokemonDetailsPageContainer from "../pages/PokemonDetails/containers/PokemonDetailsPageContainer"
+import PokemonStorePageContainer from "../pages/PokemonStore/containers/PokemonStorePageContainer"
+import LoginPageContainer from "../pages/Login/containers/LoginPageContainer"
+import RegisterPageContainer from "../pages/Register/containers/RegisterPageContainer"
+import CartPageContainer from "../pages/Cart/containers/CartPageContainer"
+import ProfilePageContainer from "../pages/Profile/containers/ProfilePageContainer"
 
 const Routes = () => {
   return (
@@ -43,6 +43,6 @@ const Routes = () => {
             />
       </Switch>
   )
-};
+}
 
-export default Routes;
+export default Routes

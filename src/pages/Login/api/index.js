@@ -1,3 +1,3 @@
-import api from "../../../api/config";
+import api from "../../../api/config"
 
-export const signIn = (body) => api.post('auth/signIn', body);
+export const signIn = (body) => api.post('auth/signIn', body)

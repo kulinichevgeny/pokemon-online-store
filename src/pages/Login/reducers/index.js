@@ -1,6 +1,6 @@
-import { handleActions } from "redux-actions";
+import { handleActions } from "redux-actions"
 
-import * as actions from "../actions";
+import * as actions from "../actions"
 
 const defaultState = {
   isAuthorized: false,
@@ -9,7 +9,7 @@ const defaultState = {
   accessToken: null,
   isLoading: false,
   errors: null,
-};
+}
 
 const authorizationReducer = handleActions({
   [actions.SIGN_IN_REQUEST]: (state) => ({
@@ -18,7 +18,7 @@ const authorizationReducer = handleActions({
     errors: null,
   }),
   [actions.SIGN_IN_SUCCESS]: (state, { payload }) => {
-    const { accessToken, _id, ...accountInfo } = payload.response;
+    const { accessToken, _id, ...accountInfo } = payload.response
 
     return {
       ...state,
@@ -27,13 +27,13 @@ const authorizationReducer = handleActions({
       customerId: _id,
       userInfo: accountInfo,
       accessToken,
-    };
+    }
   },
   [actions.SIGN_IN_FAIL]: (state, { payload }) => ({
     ...state,
     isLoading: false,
     errors: payload.response,
   }),
-}, defaultState);
+}, defaultState)
 
-export default authorizationReducer;
+export default authorizationReducer

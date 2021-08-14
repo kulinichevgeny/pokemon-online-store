@@ -1,13 +1,13 @@
-import {useCallback, useEffect} from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useCallback, useEffect } from "react"
+import { useDispatch, useSelector } from "react-redux"
 
-import ProfilePageLayout from "../components/ProfilePageLayout";
-import { GET_ORDER_REQUEST } from "../actions";
-import { SIGN_OUT } from "../../Login/actions";
-import { GET_CART_REQUEST } from "../../Cart/actions";
+import ProfilePageLayout from "../components/ProfilePageLayout"
+import { GET_ORDER_REQUEST } from "../actions"
+import { SIGN_OUT } from "../../Login/actions"
+import { GET_CART_REQUEST } from "../../Cart/actions"
 
 const ProfilePageContainer = () => {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch()
 
   const { userInfo } = useSelector(state => state.authorization)
   const { orderHistory } = useSelector(state => state.order)
@@ -23,19 +23,19 @@ const ProfilePageContainer = () => {
       if (event.key === '\u0011') {
         dispatch(SIGN_OUT())
       }
-    };
-    document.addEventListener('keypress', onKeyPress);
-    return () => {
-      document.removeEventListener('keypress', onKeyPress);
     }
-  }, [dispatch]);
+    document.addEventListener('keypress', onKeyPress)
+    return () => {
+      document.removeEventListener('keypress', onKeyPress)
+    }
+  }, [dispatch])
 
   const handleLogout = useCallback(() => {
     dispatch(SIGN_OUT())
   },[dispatch])
 
   useEffect(() => {
-    if (itemsList.length === 0) dispatch(GET_CART_REQUEST());
+    if (itemsList.length === 0) dispatch(GET_CART_REQUEST())
   }, [dispatch, itemsList.length])
 
   return <ProfilePageLayout
@@ -43,7 +43,7 @@ const ProfilePageContainer = () => {
       userInfo={userInfo}
       orderHistory={orderHistory}
       handleLogout={handleLogout}
-  />;
-};
+  />
+}
 
-export default ProfilePageContainer;
+export default ProfilePageContainer

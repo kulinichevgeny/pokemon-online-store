@@ -1,9 +1,9 @@
-import { Box, TextField } from "@material-ui/core";
-import Select from '@material-ui/core/Select';
-import MenuItem from '@material-ui/core/MenuItem';
-import FormControl from '@material-ui/core/FormControl';
+import { Box, TextField } from "@material-ui/core"
+import Select from '@material-ui/core/Select'
+import MenuItem from '@material-ui/core/MenuItem'
+import FormControl from '@material-ui/core/FormControl'
 
-import styles from "./style.module.scss";
+import styles from "./style.module.scss"
 
 const RegisterPageLayout = ({ registerValues, setRegisterValues, handleSubmit }) => {
   return (
@@ -109,7 +109,7 @@ const RegisterPageLayout = ({ registerValues, setRegisterValues, handleSubmit })
           </form>
         </Box>
       </Box>
-  );
-};
+  )
+}
 
-export default RegisterPageLayout;
+export default RegisterPageLayout

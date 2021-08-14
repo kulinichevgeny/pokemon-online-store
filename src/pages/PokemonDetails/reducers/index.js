@@ -1,12 +1,12 @@
-import { handleActions } from "redux-actions";
+import { handleActions } from "redux-actions"
 
-import * as actions from "../actions";
+import * as actions from "../actions"
 
 const defaultState = {
   pokemonInfo: { },
   isLoading: false,
   errors: null,
-};
+}
 
 const pokemonDetailsReducer = handleActions({
   [actions.GET_POKEMON_DETAILS_REQUEST]: (state) => ({
@@ -23,6 +23,6 @@ const pokemonDetailsReducer = handleActions({
     isLoading: false,
     errors: payload.response,
   }),
-}, defaultState);
+}, defaultState)
 
-export default pokemonDetailsReducer;
+export default pokemonDetailsReducer

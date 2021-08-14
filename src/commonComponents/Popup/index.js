@@ -4,9 +4,9 @@ import {
   Dialog,
   DialogContent,
   DialogTitle,
-} from "@material-ui/core";
+} from "@material-ui/core"
 
-import styles from "./style.module.scss";
+import styles from "./style.module.scss"
 
 const Popup = ({ isOpen, onClose, title, children }) => {
   return (
@@ -18,7 +18,7 @@ const Popup = ({ isOpen, onClose, title, children }) => {
           </DialogContentText>
         </DialogContent>
       </Dialog>
-  );
-};
+  )
+}
 
-export default Popup;
+export default Popup

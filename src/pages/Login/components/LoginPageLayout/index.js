@@ -1,9 +1,9 @@
-import { Box, TextField } from "@material-ui/core";
-import { Link } from "react-router-dom";
+import { Box, TextField } from "@material-ui/core"
+import { Link } from "react-router-dom"
 
-import { ROUTES } from "../../../../routes/routeNames";
+import { ROUTES } from "../../../../routes/routeNames"
 
-import styles from "./style.module.scss";
+import styles from "./style.module.scss"
 
 const LoginPageLayout = ({ setLoginValues, handleSubmit }) => {
   return (
@@ -42,7 +42,7 @@ const LoginPageLayout = ({ setLoginValues, handleSubmit }) => {
         </Box>
 
       </Box>
-  );
-};
+  )
+}
 
-export default LoginPageLayout;
+export default LoginPageLayout

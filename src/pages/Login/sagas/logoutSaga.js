@@ -1,12 +1,12 @@
-import { takeEvery } from "redux-saga/effects";
+import { takeEvery } from "redux-saga/effects"
 
-import { SIGN_OUT } from "../actions";
+import { SIGN_OUT } from "../actions"
 
 function signOutSaga() {
-  localStorage.clear();
-  window.location.reload();
+  localStorage.clear()
+  window.location.reload()
 }
 
 export function* signOutWatcher(action) {
-  yield takeEvery(SIGN_OUT, signOutSaga);
+  yield takeEvery(SIGN_OUT, signOutSaga)
 }

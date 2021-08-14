@@ -1,42 +1,42 @@
-import { useCallback } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useHistory } from "react-router-dom";
+import { useCallback } from "react"
+import { useDispatch, useSelector } from "react-redux"
+import { useHistory } from "react-router-dom"
 
-import { useForm, useModalPopup } from "../../../hooks";
-import LoginPageLayout from "../components/LoginPageLayout";
-import Popup from "../../../commonComponents/Popup";
-import { SIGN_IN_REQUEST } from "../actions";
-import { ROUTES } from "../../../routes/routeNames";
+import { useForm, useModalPopup } from "../../../hooks"
+import LoginPageLayout from "../components/LoginPageLayout"
+import Popup from "../../../commonComponents/Popup"
+import { SIGN_IN_REQUEST } from "../actions"
+import { ROUTES } from "../../../routes/routeNames"
 
-import styles from "../components/LoginPageLayout/style.module.scss";
+import styles from "../components/LoginPageLayout/style.module.scss"
 
 const LoginPageContainer = () => {
-  const dispatch = useDispatch();
-  const history = useHistory();
+  const dispatch = useDispatch()
+  const history = useHistory()
 
-  const { errors } = useSelector(state => state.authorization);
+  const { errors } = useSelector(state => state.authorization)
 
-  const [isModalOpen, handleOpen, handleClose] = useModalPopup();
+  const [isModalOpen, handleOpen, handleClose] = useModalPopup()
 
   const [loginValues, setLoginValues] = useForm({
     email: '',
     password: '',
-  });
+  })
 
   const handleSubmit = useCallback((event) => {
-    event.preventDefault();
-    handleOpen();
+    event.preventDefault()
+    handleOpen()
 
     if (loginValues.password !== '') {
-      dispatch(SIGN_IN_REQUEST(loginValues));
+      dispatch(SIGN_IN_REQUEST(loginValues))
     }
-  },[dispatch, loginValues, handleOpen]);
+  },[dispatch, loginValues, handleOpen])
 
   const handleAuth = useCallback(() => {
-    handleClose();
+    handleClose()
 
     history.push(ROUTES.HOME_PAGE)
-  },[handleClose, history]);
+  },[handleClose, history])
 
   return <>
     <LoginPageLayout
@@ -62,6 +62,6 @@ const LoginPageContainer = () => {
         </Popup>
     }
   </>
-};
+}
 
-export default LoginPageContainer;
+export default LoginPageContainer
